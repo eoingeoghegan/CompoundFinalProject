@@ -1,0 +1,26 @@
+{
+  "name": "compoundfinalproject",
+  "version": "1.0.0",
+  "description": "Final Project Setu HDIP, A simple full stack workout tracker ",
+  "license": "ISC",
+  "author": "Eoin Geoghegan",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "lint": "./node_modules/.bin/eslint . --ext .js"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "prettier": "^3.8.1"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^21.4.4",
+    "@hapi/vision": "^7.0.3",
+    "handlebars": "^4.7.8"
+  }
+}

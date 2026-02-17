@@ -1,0 +1,15 @@
+Progress of the project
+
+Start
+## Backend Technology 
+# Commands used/ tech installed in order
+- npm init – in VS to start project, this creates the package.json (questions about the project in json format)
+# Code Quality Controls:
+- npm install -D eslint - ESLint enforces a range of configurable Javascript standards + created a eslint file showing the standards
+- npm install -D  prettier - Prettier is a code formatter + created prettier file showing the format settings
+- Added gitignore file to prevent generated files from populating git
+# Created the server
+- npm install @hapi/hapi - Used to add server and can run npm run start
+- created src/server.js (server) to run locally on port 3000.
+- Updated package.json to include src/server.js as main + script start
+- npm run start allows the application to run and view in the browser.
