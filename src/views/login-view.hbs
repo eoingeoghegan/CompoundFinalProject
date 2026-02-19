@@ -1,0 +1,39 @@
+{{> welcome-menu active="login"}}
+
+<section class="section">
+  <div class="columns is-centered">
+    <div class="column is-5">
+      <div class="box">
+        <h1 class="title has-text-centered">Log in</h1>
+
+        <form action="/authenticate" method="POST">
+          <div class="field">
+            <label class="label">Email</label>
+            <input
+              class="input"
+              type="text"
+              placeholder="Enter email"
+              name="email"
+            >
+          </div>
+
+          <div class="field">
+            <label class="label">Password</label>
+            <input
+              class="input"
+              type="password"
+              placeholder="Enter password"
+              name="password"
+            >
+          </div>
+
+          <div class="field is-grouped is-grouped-centered">
+            <button class="button is-link is-fullwidth">
+              Log in
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
