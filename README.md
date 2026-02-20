@@ -39,5 +39,22 @@ Start
 -  Added imported the db to server and added db.init() to allow it to work.
 -  User can now view login and signup views, signup which stores in memory and use new login to direct to dashboard.
 -  Created dashboard next and added the route, which directs the user here if successful login with a logout option in nav. All working now.
+## Touch Ups
+-	Updated the navbar with extra tabs + active button highlighted 
+-	Changed redirect to login page after signing up
+-	Changed the exercise store to workoutstore instead and changed through out the project.
+## Dashboard
+-	Added cards to dashboard that are predefined but no functionality yet.
+-	Created add and list workout partials for the workouts that the user can create
+-	Updated the dashboard controller to include add and view workouts.
+-	Updated the webroutes for the dashboard
+## Progress after Sprint 1.
+The user can now sign up to the application which creates the user in memory. The user can login using created account validating by email and password. Once logged in the user can see the dashboard where there are predefined workout card displayed with no functionality yet. The user can add a workout and it will display on on the dashboard. Needs finetuning. 
+
+# TODO !!!!!
+-	When updated navbar with exercises and tracker must make views for these and update routes and create controllers. 
+-	Finetune how created cards are displayed when created
+-	Begin working on opening a workout card to add exercises to them and delete the workout.
+-	Work on predefined cards, open and view exercises in them.
 
 

@@ -1,15 +1,20 @@
-<nav class="navbar">
+<nav class="navbar navbar-compact" style="border-bottom: 1px solid">
   <div class="navbar-brand">
     {{> compound-logo}}
   </div>
   <div class="navbar-menu" id="navMenu">
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons">
+        <div class="buttons" style="margin: 0;">
           <a id="dashboard" class="button" href="/dashboard"> Dashboard </a>
+          <a id="logout" class="button" href="/exercises"> Exercises </a>
+          <a id="dashboard" class="button" href="/tracker"> Tracker </a>
           <a id="logout" class="button" href="/logout"> Logout </a>
         </div>
       </div>
     </div>
   </div>
 </nav>
+<script>
+  document.getElementById("{{active}}").classList.add("is-primary");
+</script>

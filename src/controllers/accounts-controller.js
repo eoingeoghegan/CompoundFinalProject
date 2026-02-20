@@ -18,7 +18,7 @@ export const accountsController = {
       const user = request.payload;
       await db.userStore.addUser(user);
       console.log(user, "Created");
-      return h.redirect("/");
+      return h.redirect("/login");
     },
   },
   showLogin: {

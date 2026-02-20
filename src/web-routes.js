@@ -13,5 +13,5 @@ export const webRoutes = [
 
 
   { method: "GET", path: "/dashboard", config: dashboardController.index },
-
+  { method: "POST", path: "/dashboard/addworkout", config: dashboardController.addWorkout },
 ];

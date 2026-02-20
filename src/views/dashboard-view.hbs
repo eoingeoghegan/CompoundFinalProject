@@ -1,5 +1,57 @@
 {{> menu-navbar active="dashboard"}}
 
 <section class="section">
-  <p>Welcome to your dashboard!</p>
-</section>
+  <!-- Dashboard Welcome -->
+  <p class="title is-4">Welcome to your dashboard!</p>
+
+  <!-- Pre-made Workout Cards -->
+  <div class="columns is-multiline is-variable is-4">
+    <div class="column is-3">
+      <div class="card box-link-hover-shadow">
+        <div class="card-content">
+          <p class="title is-5">Upper Body</p>
+          <p class="content">Exercises focused on arms, chest, and shoulders.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column is-3">
+      <div class="card is-hoverable">
+        <div class="card-content">
+          <p class="title is-5">Lower Body</p>
+          <p class="content">Exercises focused on legs and glutes.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column is-3">
+      <div class="card is-hoverable">
+        <div class="card-content">
+          <p class="title is-5">Full Body</p>
+          <p class="content">Workouts that engage your entire body.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column is-3">
+      <div class="card is-hoverable">
+        <div class="card-content">
+          <p class="title is-5">Core</p>
+          <p class="content">Focus on abs and lower back strength.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Your Own Section -->
+  <div class="section">
+    <p class="title is-5">Create Your Own</p>
+    
+   
+    <div class="columns is-multiline is-variable is-4" id="user-workouts">
+        {{> list-workouts}}
+        {{> add-workout}}
+      
+    </div>
+  </div>
+</section>s
