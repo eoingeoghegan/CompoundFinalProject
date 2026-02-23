@@ -1,0 +1,25 @@
+{{!--This creates a space to enter the exercise details, It uses the route to store the 
+exercise details in the workout --}}
+<form class="box" action="/workout/{{workout._id}}/addexercise" method="POST">
+  <label>Enter Exercise Details:</label>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Title" name="title">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Equipment" name="equipment">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Weight (kg)" name="weight">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Sets" name="sets">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Reps" name="reps">
+      </div>
+    </div>
+  </div>
+  <button class="button is-primary">Add Exercise</button>
+</form>

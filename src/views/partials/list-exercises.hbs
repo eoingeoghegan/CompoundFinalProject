@@ -1,0 +1,23 @@
+{{!--Table to view exercises in a workout, {{title}}.. etc is retrived from form data --}}
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Exercise</th>
+      <th>Equipment</th>
+      <th>Weight</th>
+      <th>Sets</th>
+      <th>Reps</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each workout.exercises}}
+      <tr>
+        <td>{{title}}</td>
+        <td>{{equipment}}</td>
+        <td>{{weight}}</td>
+        <td>{{sets}}</td>
+        <td>{{reps}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -1,6 +1,7 @@
 // memory stores imported
 import { userMemoryStore } from "./memory/user-memory-store.js";
 import { workoutsMemoryStore } from "./memory/workout-memory.js";
+import { exerciseMemoryStore } from "./memory/exercise-memory-store.js";
 
 /**
  * The db object is defined with properties for userStore and workoutStore, 
@@ -9,6 +10,7 @@ import { workoutsMemoryStore } from "./memory/workout-memory.js";
 export const db = {
   userStore: null,
   workoutStore: null,
+  exerciseStore: null,
 
 /**
  * This works by allowing the db to be initialized with the userMemoryStore and workouts MemoryStore,
@@ -18,5 +20,6 @@ export const db = {
   init() {
     this.userStore = userMemoryStore;
     this.workoutStore = workoutsMemoryStore;
+    this.exerciseStore = exerciseMemoryStore;
   },
 };

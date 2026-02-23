@@ -1,3 +1,5 @@
+import { exerciseMemoryStore } from "./exercise-memory-store.js";
+
 import { v4 as uuidv4 } from "uuid";
 // workouts starts off as blank array
 let workouts = [];
@@ -17,9 +19,12 @@ export const workoutsMemoryStore = {
     return workout;
   },
 
-  // finds the workout by id and returns it.
+  // finds the workout by its id, then gets the exercises for that workout and 
+  // adds them to the workout object before returning it.
   async getWorkoutById(id) {
-    return workouts.find((workout) => workout._id === id);
+    const list = workouts.find((workout) => workout._id === id);
+    list.exercises = await exerciseMemoryStore.getExercisesByWorkoutId(list._id);
+    return list;
   },
 
 /**

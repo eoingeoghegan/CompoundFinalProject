@@ -1,5 +1,7 @@
 import { accountsController } from "./controllers/accounts-controller.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
+import { workoutController } from "./controllers/workout-controller.js";  
+import { predefinedCardController } from "./controllers/predefinedCard-controller.js"; 
 
 // this works getting the path leading to the controller where the functions are defined, 
 // and then we can call the functions in the controller to render the pages.
@@ -14,4 +16,13 @@ export const webRoutes = [
 
   { method: "GET", path: "/dashboard", config: dashboardController.index },
   { method: "POST", path: "/dashboard/addworkout", config: dashboardController.addWorkout },
+
+
+  { method: "GET", path: "/workout/{id}", config: workoutController.index },
+  { method: "POST", path: "/workout/{id}/addexercise", config: workoutController.addExercise },
+
+  { method: "GET", path: "/predefined/upper", config: predefinedCardController.upper },
+  { method: "GET", path: "/predefined/lower", config: predefinedCardController.lower },
+  { method: "GET", path: "/predefined/full", config: predefinedCardController.full },
+  { method: "GET", path: "/predefined/core", config: predefinedCardController.core },
 ];

@@ -1,11 +1,13 @@
-<div class="columns is-multiline">
-  {{#each workouts}}
-  <div class="column is-3">
-    <div class="card is-hoverable">
-      <div class="card-content">
-        <p class="title is-5">{{title}}</p>
-      </div>
-    </div>
+{{!-- For all the workouts displayes, they will have a button that links to the workout details page --}}
+{{#each workouts}}
+  <div class="box box-link-hover-shadow">
+    <h2 class="title">
+      {{title}}
+    </h2>
+    <a href="/workout/{{_id}}" class="button">
+      <span class="icon is-small">
+        <i class="fas fa-folder-open"></i>
+      </span>
+    </a>
   </div>
-  {{/each}}
-</div>
+{{/each}}
