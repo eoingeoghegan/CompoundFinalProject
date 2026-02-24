@@ -17,6 +17,11 @@
         <td>{{weight}}</td>
         <td>{{sets}}</td>
         <td>{{reps}}</td>
+        <td>
+            <a href="/workout/{{../workout._id}}/deleteexercise/{{_id}}" class="ui icon button">
+              <i class="fas fa-trash"></i>
+            </a>
+        </td>
       </tr>
     {{/each}}
   </tbody>

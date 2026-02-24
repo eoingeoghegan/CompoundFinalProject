@@ -16,10 +16,12 @@ export const webRoutes = [
 
   { method: "GET", path: "/dashboard", config: dashboardController.index },
   { method: "POST", path: "/dashboard/addworkout", config: dashboardController.addWorkout },
+  { method: "GET", path: "/dashboard/deleteworkout/{id}", config: dashboardController.deleteWorkout },
 
-
+  
   { method: "GET", path: "/workout/{id}", config: workoutController.index },
   { method: "POST", path: "/workout/{id}/addexercise", config: workoutController.addExercise },
+  { method: "GET", path: "/workout/{id}/deleteexercise/{exerciseid}", config: workoutController.deleteExercise },
 
   { method: "GET", path: "/predefined/upper", config: predefinedCardController.upper },
   { method: "GET", path: "/predefined/lower", config: predefinedCardController.lower },

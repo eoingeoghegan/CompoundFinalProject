@@ -4,10 +4,17 @@ import { v4 as uuidv4 } from "uuid";
 // workouts starts off as blank array
 let workouts = [];
 
+
+
 export const workoutsMemoryStore = {
   async getAllWorkouts() {
     return workouts;
   },
+// retunrd workouts that match the user id
+    async getUserWorkouts(userid) {
+    return workouts.filter((workout) => workout.userid === userid);
+  },
+
 
   /**
    * generates a unique id, adds the id to the workout, pushes the workout object 
@@ -27,6 +34,7 @@ export const workoutsMemoryStore = {
     return list;
   },
 
+ 
 /**
  * finds the workout by its id, gets the index of the workout in the array,
  *  and then removes it from the array. 

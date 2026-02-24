@@ -1,3 +1,4 @@
+// views for each predefined card
 export const predefinedCardController = {
   upper: {
     handler: (request, h) => {

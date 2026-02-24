@@ -1,23 +1,14 @@
 {{> menu-navbar active="dashboard"}}
 
 <section class="section">
-  <!-- Dashboard Welcome -->
   <p class="title is-4">Welcome to your dashboard!</p>
-  
-
    {{> workout-predefinedCards}}
 
- 
   <!-- Create Your Own Section -->
   <div class="section">
-    <p class="title is-5">Create Your Own</p>
-    
+    <p class="title">Create Your Own</p>
+    {{> add-workout}} 
+    {{> list-workouts}}
    
-    <div class="columns is-multiline is-variable is-4" id="user-workouts">
-       
-        {{> list-workouts}}
-        {{> add-workout}}
-      
-    </div>
   </div>
 </section>

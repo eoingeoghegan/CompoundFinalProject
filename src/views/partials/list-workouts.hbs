@@ -1,13 +1,23 @@
 {{!-- For all the workouts displayes, they will have a button that links to the workout details page --}}
-{{#each workouts}}
-  <div class="box box-link-hover-shadow">
-    <h2 class="title">
-      {{title}}
-    </h2>
-    <a href="/workout/{{_id}}" class="button">
-      <span class="icon is-small">
-        <i class="fas fa-folder-open"></i>
-      </span>
+<div class="columns is-multiline">
+  {{#each workouts}}
+    <div class="column is-3">
+      <div class="box box-link-hover-shadow has-text-centered">
+        <h2 class="title is-5">
+          {{title}}
+        </h2>
+
+        <a href="/workout/{{_id}}" class="button">
+          <span class="icon is-small">
+            <i class="fas fa-folder-open"></i>
+          </span>
+          <span>Open</span>
+        </a>
+        <a href="/dashboard/deleteworkout/{{_id}}" class="button">
+      <i class="fas fa-trash"></i>
     </a>
-  </div>
-{{/each}}
+      </div>
+    </div>
+  {{/each}}
+</div>
+

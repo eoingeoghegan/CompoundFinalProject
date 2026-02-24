@@ -20,6 +20,11 @@ export const workoutController = {
     },
   },
 
+  /**
+   * gets the workout by id, request.params.id is the id from the url. Then it creates a new exercise
+   * object from form on the workout page. add.exercise takes the workout ID and the object + adds
+   * the exercise to the workout.
+   */
   addExercise: {
     handler: async function (request, h) {
       const workout = await db.workoutStore.getWorkoutById(request.params.id);
@@ -34,4 +39,14 @@ export const workoutController = {
       return h.redirect(`/workout/${workout._id}`);
     },
   },
+
+  deleteExercise: {
+    handler: async function(request, h) {
+      const workout = await db.workoutStore.getWorkoutById(request.params.id);
+      await db.exerciseStore.deleteExercise(request.params.exerciseid);
+      return h.redirect(`/workout/${workout._id}`);
+    },
+  },
 };
+
+ 
