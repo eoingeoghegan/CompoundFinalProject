@@ -47,6 +47,20 @@ export const workoutController = {
       return h.redirect(`/workout/${workout._id}`);
     },
   },
+
+/** 
+* requests users credentials, goes to workoutstore to get the workout by id.
+* then adds the workout to the tracker store with user id + workout info.
+* User redirected to tracker tab to see tracked workout.
+*/
+  trackWorkout: {
+  handler: async function (request, h) {
+    const loggedInUser = request.auth.credentials;
+    const workout = await db.workoutStore.getWorkoutById(request.params.id);
+    await db.trackerStore.addTrackedWorkout(loggedInUser._id, workout);
+    return h.redirect("/tracker");
+  },
+},
 };
 
  
