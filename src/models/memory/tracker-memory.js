@@ -17,7 +17,7 @@ export const trackerMemoryStore = {
       workoutId: workout._id,
       workoutTitle: workout.title,
       exercises: workout.exercises.map(e => ({ ...e })), 
-      timestamp: new Date(),
+      timestamp: new Date().toLocaleString(),
     };
     trackedWorkouts.push(trackedWorkout);
     return trackedWorkout;
@@ -41,4 +41,26 @@ export const trackerMemoryStore = {
   async deleteAllTrackedWorkouts() {
     trackedWorkouts = [];
   },
+
+  /**
+   * How this works: 
+   * 1. Find the tracked workout by trackedWorkoutId.
+   * 2. If found, find the exercise within that workout by exerciseId.
+   * 3. If found, update the exercise with the new values from updatedExercise.
+   */
+  async updateTrackedExercise(trackedWorkoutId, exerciseId, updatedExercise) {
+  const workout = trackedWorkouts.find(w => w._id === trackedWorkoutId);
+
+  if (workout) {
+    const exercise = workout.exercises.find(e => e._id === exerciseId);
+
+    if (exercise) {
+      exercise.title = updatedExercise.title;
+      exercise.equipment = updatedExercise.equipment;
+      exercise.weight = updatedExercise.weight;
+      exercise.sets = updatedExercise.sets;
+      exercise.reps = updatedExercise.reps;
+    }
+  }
+},
 };

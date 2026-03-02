@@ -18,10 +18,20 @@
         <td>{{sets}}</td>
         <td>{{reps}}</td>
         <td>
-            <a href="/workout/{{../workout._id}}/deleteexercise/{{_id}}" class="ui icon button">
-              <i class="fas fa-trash"></i>
-            </a>
+          {{!-- {{_id}} refers to the current exercise ID (inside the #each exercises loop).
+
+          {{../workout._id}} uses ../ to move up one level in context
+           access the parent object (the workout),
+           so this is the workout ID. --}}
+          <a href="/workout/{{../workout._id}}/deleteexercise/{{_id}}" class="ui icon button">
+            <i class="fas fa-trash"></i>
+          </a>
         </td>
+        <td>
+          <a href="/workout/{{../workout._id}}/editexercise/{{_id}}" class="ui icon button">
+            <i class="fas fa-edit"></i> 
+         </a>
+        <td>
       </tr>
     {{/each}}
   </tbody>

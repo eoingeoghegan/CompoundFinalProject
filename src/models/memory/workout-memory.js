@@ -47,4 +47,12 @@ export const workoutsMemoryStore = {
   async deleteAllWorkouts() {
     workouts = [];
   },
+
+// updateWorkoutTitle finds the workout by its id, then updates the title of the workout with the new title.
+   async updateWorkoutTitle(id, newTitle) {
+     const workout = workouts.find(w => w._id === id);
+   if (workout) {
+      workout.title = newTitle;
+    };
+  },
 };

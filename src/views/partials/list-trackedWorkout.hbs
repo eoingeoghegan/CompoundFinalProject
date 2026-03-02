@@ -5,7 +5,15 @@
      {{workoutTitle}} <br>
       <small>{{timestamp}}</small>
     </h2>
-
+    <div class="level-right">
+        {{!-- Delete Tracked Workout
+        
+        {{_id}} refers to the current tracked workout ID 
+        from the #each trackedWorkouts loop. --}}
+        <a href="/tracker/delete/{{_id}}" class="button is-danger is-small">
+          <i class="fas fa-trash"></i>
+        </a>
+      </div>
     <table class="table is-fullwidth">
       <thead>
         <tr>
@@ -24,6 +32,20 @@
             <td>{{weight}}</td>
             <td>{{sets}}</td>
             <td>{{reps}}</td>
+            <td>  
+              {{!--  {{_id}} refers to the current exercise ID 
+                (because we are inside #each exercises).
+
+                {{../_id}} moves up one level in context to the 
+                 parent tracked workout, so this is the tracked workout ID.
+
+                Final route:
+                /tracker/:trackedWorkoutId/editexercise/:exerciseId --}}
+              <a href="/tracker/{{../_id}}/editexercise/{{_id}}" 
+                class="button is-warning is-small">
+                  <i class="fas fa-edit"></i>
+              </a>
+            </td>
           </tr>
         {{/each}}
       </tbody>

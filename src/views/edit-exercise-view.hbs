@@ -1,0 +1,37 @@
+{{> menu-navbar }}
+
+<section class="section">
+  <div class="box">
+    <h1 class="title">Edit Exercise</h1>
+
+    <form action="/workout/{{exercise.workoutid}}/editexercise/{{exercise._id}}" method="POST">
+      <div class="field">
+        <label class="label">Exercise Title</label>
+        <div class="control">
+          <input class="input" type="text" name="title" value="{{exercise.title}}">
+        </div>
+        
+        <label class="label">Exercise Equipment</label>
+        <div class="control">
+          <input class="input" type="text" name="equipment" value="{{exercise.equipment}}">
+        </div>
+        <label class="label">Exercise Weight</label>
+        <div class="control">
+          <input class="input" type="text" name="weight" value="{{exercise.weight}}">
+        </div>
+        <label class="label">Exercise Sets</label>
+        <div class="control">
+          <input class="input" type="text" name="sets" value="{{exercise.sets}}">
+        </div>
+        <label class="label">Exercise Reps</label>
+        <div class="control">
+          <input class="input" type="text" name="reps" value="{{exercise.reps}}">
+        </div>
+      </div>
+
+      <button class="button is-success">
+        Save Changes
+      </button>
+    </form>
+  </div>
+</section>

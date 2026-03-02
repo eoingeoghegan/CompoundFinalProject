@@ -7,13 +7,20 @@
           {{title}}
         </h2>
 
-        <a href="/workout/{{_id}}" class="button">
+        <a href="/workout/{{_id}}" class="button is-primary">
           <span class="icon is-small">
             <i class="fas fa-folder-open"></i>
           </span>
           <span>Open</span>
         </a>
-        <a href="/dashboard/deleteworkout/{{_id}}" class="button">
+        <a href="/workout/{{_id}}/edit" class="button is-warning">
+          <span class="icon is-small">
+            <i class="fas fa-pen"></i>
+          </span>
+          <span>Edit</span>
+        </a>
+        <a href="/dashboard/deleteworkout/{{_id}}" class="button is-danger">
+          <span class="icon is-small">
       <i class="fas fa-trash"></i>
     </a>
       </div>

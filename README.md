@@ -28,6 +28,18 @@ First let user edit workout information.
 ## Session3 progress
 The user can create a workout, when inside the workout there is a track workout button now. When pressed it copies whatever exercises that are added and saves this to the tracker tab. It record the time and date the workout is completed and shows the workout title. This has a controller for tracker and uses the workout controller. It has a trackers store in memory and the routes are completed to allow info to be displayed. Need to be fine tuned but working as planned.
 
+## Sprint 3 02/03/26
+## session 1 1 hour
+
+-	Created edit-workout-view and edit-exercise-view to show fields to update the title of workout and the exercises within the workout. 
+
+-	Added edit button in list exercises and list workouts which route to the edit and update methods in the controller. Added these methods to allow inputed data to be edited and saved and display in browser.
+
+-	Created edit tracker workout view, which is a form to update tracked workouts. Added a delete button to list tracked workouts and an edit button which open the edit tracked workout form. Added a method to tracker store for updating the trackedworkout by workoutid and exerciseID. And added two methods to tracker controller to edit tracked workout view and to update exercises that are tracked.
+
+-	Session progress. Now the user can add a workout, add exercises to workout and track the workout. The user can view the workout on the tracker tab. The workout can be edited/deleted, the exercises can be edited/deleted and the tracked workouts can be edited/deleted.
+
+
 ## TODO !!!!!
 -	When updated navbar with exercises  must make views for these and update routes and create controllers. 
 -	Change button icon in list workout partial

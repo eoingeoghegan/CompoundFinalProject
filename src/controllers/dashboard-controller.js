@@ -33,6 +33,13 @@ export const dashboardController = {
     },
   },
 
+
+/**
+ * How this works: 
+ * The deleteWorkout handler receives a request with a workout ID parameter.
+ * It retrieves the workout by its ID using the workoutStore, then calls the deleteWorkoutById method to remove it from the database.
+ * After deletion, it redirects the user back to the dashboard view.
+ */
    deleteWorkout: {
     handler: async function (request, h) {
       const workout = await db.workoutStore.getWorkoutById(request.params.id);
@@ -40,4 +47,6 @@ export const dashboardController = {
       return h.redirect("/dashboard");
     },
   },
+
+  
 };

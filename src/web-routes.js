@@ -23,8 +23,11 @@ export const webRoutes = [
   { method: "GET", path: "/workout/{id}", config: workoutController.index },
   { method: "POST", path: "/workout/{id}/addexercise", config: workoutController.addExercise },
   { method: "GET", path: "/workout/{id}/deleteexercise/{exerciseid}", config: workoutController.deleteExercise },
-  // CHECK
   { method: "POST", path: "/workout/{id}/trackworkout", config: workoutController.trackWorkout },
+  { method: "GET", path: "/workout/{id}/edit", config: workoutController.workoutEditView },
+  { method: "POST", path: "/workout/{id}/edit", config: workoutController.updateWorkoutTitle },
+  { method: "GET", path: "/workout/{id}/editexercise/{exerciseid}", config: workoutController.editExerciseView },
+  { method: "POST", path: "/workout/{id}/editexercise/{exerciseid}", config: workoutController.updateExercise },
 
 
   { method: "GET", path: "/predefined/upper", config: predefinedCardController.upper },
@@ -32,7 +35,11 @@ export const webRoutes = [
   { method: "GET", path: "/predefined/full", config: predefinedCardController.full },
   { method: "GET", path: "/predefined/core", config: predefinedCardController.core },
   
-  // CHECK
+
   { method: "GET", path: "/tracker", config: trackerController.index },
+  { method: "GET", path: "/tracker/delete/{id}", config: trackerController.deleteTrackedWorkout },
+  // explain
+  { method: "GET", path: "/tracker/{id}/editexercise/{exerciseid}", config: trackerController.editTrackedWorkoutView },
+  { method: "POST", path: "/tracker/{id}/editexercise/{exerciseid}", config: trackerController.updateTrackedExercise },
 
 ];
