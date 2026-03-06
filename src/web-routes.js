@@ -3,6 +3,7 @@ import { dashboardController } from "./controllers/dashboard-controller.js";
 import { workoutController } from "./controllers/workout-controller.js";  
 import { predefinedCardController } from "./controllers/predefinedCard-controller.js"; 
 import { trackerController } from "./controllers/tracker-controller.js";
+import { adminController } from "./controllers/admin-controller.js";
 
 // this works getting the path leading to the controller where the functions are defined, 
 // and then we can call the functions in the controller to render the pages.
@@ -13,6 +14,9 @@ export const webRoutes = [
   { method: "GET", path: "/logout", config: accountsController.logout },
   { method: "POST", path: "/register", config: accountsController.signup },
   { method: "POST", path: "/authenticate", config: accountsController.login },
+  { method: "GET", path: "/admin/login", config: accountsController.showAdminLogin },
+  { method: "POST", path: "/admin/authenticate", config: accountsController.adminLogin },
+  
 
 
   { method: "GET", path: "/dashboard", config: dashboardController.index },
@@ -42,4 +46,5 @@ export const webRoutes = [
   { method: "GET", path: "/tracker/{id}/editexercise/{exerciseid}", config: trackerController.editTrackedWorkoutView },
   { method: "POST", path: "/tracker/{id}/editexercise/{exerciseid}", config: trackerController.updateTrackedExercise },
 
+  { method: "GET", path: "/admin/dashboard", config: adminController.index },
 ];

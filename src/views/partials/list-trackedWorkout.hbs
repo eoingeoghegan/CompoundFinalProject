@@ -1,38 +1,52 @@
-<h1 class="title">Tracked Workouts</h1>
+<h1 class="title is-3 mb-5">Tracked Workouts</h1>
 
 {{#each trackedWorkouts}}
-  <div class="box">
-     {{workoutTitle}} <br>
-      <small>{{timestamp}}</small>
-    </h2>
-    <div class="level-right">
+  <div class="box mb-6">
+    <div class="level">
+      <div class="level-left">
+        <div>
+          <h2 class="title is-5 mb-1">
+            {{workoutTitle}}
+          </h2>
+          <p class="is-size-7 has-text-grey">
+            {{timestamp}}
+          </p>
+        </div>
+      </div>
+
+      <div class="level-right">
         {{!-- Delete Tracked Workout
         
         {{_id}} refers to the current tracked workout ID 
         from the #each trackedWorkouts loop. --}}
-        <a href="/tracker/delete/{{_id}}" class="button is-danger is-small">
-          <i class="fas fa-trash"></i>
+        <a href="/tracker/delete/{{_id}}" 
+           class="button is-danger is-light is-small is-rounded">
+          <span class="icon">
+            <i class="fas fa-trash"></i>
+          </span>
         </a>
       </div>
-    <table class="table is-fullwidth">
-      <thead>
+    </div>
+    <table class="table is-fullwidth is-striped  is-bordered mt-4">
+      <thead class="has-background-light">
         <tr>
           <th>Exercise</th>
           <th>Equipment</th>
           <th>Weight</th>
           <th>Sets</th>
           <th>Reps</th>
+          <th class="has-text-centered">Edit</th>
         </tr>
       </thead>
       <tbody>
         {{#each exercises}}
           <tr>
-            <td>{{title}}</td>
+            <td class="has-text-weight-semibold">{{title}}</td>
             <td>{{equipment}}</td>
             <td>{{weight}}</td>
             <td>{{sets}}</td>
             <td>{{reps}}</td>
-            <td>  
+            <td class="has-text-centered">  
               {{!--  {{_id}} refers to the current exercise ID 
                 (because we are inside #each exercises).
 
@@ -42,8 +56,10 @@
                 Final route:
                 /tracker/:trackedWorkoutId/editexercise/:exerciseId --}}
               <a href="/tracker/{{../_id}}/editexercise/{{_id}}" 
-                class="button is-warning is-small">
+                 class="button is-warning is-light is-small is-rounded">
+                <span class="icon">
                   <i class="fas fa-edit"></i>
+                </span>
               </a>
             </td>
           </tr>

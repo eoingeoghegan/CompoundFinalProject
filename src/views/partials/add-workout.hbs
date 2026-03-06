@@ -1,9 +1,19 @@
-<section class="section box">
+<section class="box">
   <form action="/dashboard/addworkout" method="POST">
-  <div class="field">
-    <label class="label">Workout Title</label> <input class="input" type="text" placeholder="Enter Workout title" name="title">
-  </div>
-  <button class="button is-link">Add Workout</button>
+    
+    <h3 class="title is-5">New Workout</h3>
+    <div class="field">
+      <div class="control">
+        <input class="input is-rounded" type="text" 
+               placeholder="Enter workout title" name="title">
+      </div>
+    </div>
+    <div class="field">
+      <div class="control">
+        <button class="button is-link is-rounded is-fullwidth">
+          Add Workout
+        </button>
+      </div>
+    </div>
   </form>
 </section>
-

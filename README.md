@@ -39,6 +39,21 @@ The user can create a workout, when inside the workout there is a track workout 
 
 -	Session progress. Now the user can add a workout, add exercises to workout and track the workout. The user can view the workout on the tracker tab. The workout can be edited/deleted, the exercises can be edited/deleted and the tracked workouts can be edited/deleted.
 
+## Session 2 1 hour
+
+-	Installed npm install lowdb for JSON db.
+-	Created json store for user, exercise, workout and tracker. Updated db to use the new stores which now saves the  data in json db. All working as expected.
+-	Updated the application to make it look nicer visually.
+## Session 3 -  2 hours
+Got admin working how it works.. 
+-	Admin visits /admin/login.
+-	Enters username/password (from .env).
+-	If correct,  session cookie { admin: true } is created.
+-	Admin accesses /admin/dashboard.
+-	adminController.index checks for admin: true in the cookie.
+-	If check passes,  shows dashboard; else redirects to login.
+
+
 
 ## TODO !!!!!
 -	When updated navbar with exercises  must make views for these and update routes and create controllers. 

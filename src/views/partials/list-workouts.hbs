@@ -1,30 +1,23 @@
-{{!-- For all the workouts displayes, they will have a button that links to the workout details page --}}
-<div class="columns is-multiline">
+<div class="columns is-multiline is-variable is-4">
   {{#each workouts}}
     <div class="column is-3">
-      <div class="box box-link-hover-shadow has-text-centered">
-        <h2 class="title is-5">
+      <div class="box has-text-centered">
+        <h2 class="title is-5 mb-4">
           {{title}}
         </h2>
-
-        <a href="/workout/{{_id}}" class="button is-primary">
-          <span class="icon is-small">
-            <i class="fas fa-folder-open"></i>
-          </span>
-          <span>Open</span>
-        </a>
-        <a href="/workout/{{_id}}/edit" class="button is-warning">
-          <span class="icon is-small">
-            <i class="fas fa-pen"></i>
-          </span>
-          <span>Edit</span>
-        </a>
-        <a href="/dashboard/deleteworkout/{{_id}}" class="button is-danger">
-          <span class="icon is-small">
-      <i class="fas fa-trash"></i>
-    </a>
+        <div class="buttons is-centered">
+          <a href="/workout/{{_id}}" class="button is-primary is-rounded">
+            Open
+          </a>
+          <a href="/workout/{{_id}}/edit" class="button is-warning is-rounded">
+            Edit
+          </a>
+          <a href="/dashboard/deleteworkout/{{_id}}" 
+             class="button is-danger is-rounded">
+            Delete
+          </a>
+        </div>
       </div>
     </div>
   {{/each}}
 </div>
-

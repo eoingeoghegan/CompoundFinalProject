@@ -1,43 +1,59 @@
 {{!--Table to view exercises in a workout, {{title}}.. etc is retrived from form data --}}
-<table class="table is-fullwidth">
-  <thead>
-    <tr>
-      <th>Exercise</th>
-      <th>Equipment</th>
-      <th>Weight</th>
-      <th>Sets</th>
-      <th>Reps</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each workout.exercises}}
+<div class="box">
+  <table class="table is-fullwidth is-striped is-bordered">
+    <thead class="has-background-light">
       <tr>
-        <td>{{title}}</td>
-        <td>{{equipment}}</td>
-        <td>{{weight}}</td>
-        <td>{{sets}}</td>
-        <td>{{reps}}</td>
-        <td>
-          {{!-- {{_id}} refers to the current exercise ID (inside the #each exercises loop).
-
-          {{../workout._id}} uses ../ to move up one level in context
-           access the parent object (the workout),
-           so this is the workout ID. --}}
-          <a href="/workout/{{../workout._id}}/deleteexercise/{{_id}}" class="ui icon button">
-            <i class="fas fa-trash"></i>
-          </a>
-        </td>
-        <td>
-          <a href="/workout/{{../workout._id}}/editexercise/{{_id}}" class="ui icon button">
-            <i class="fas fa-edit"></i> 
-         </a>
-        <td>
+        <th>Exercise</th>
+        <th>Equipment</th>
+        <th>Weight</th>
+        <th>Sets</th>
+        <th>Reps</th>
+        <th class="has-text-centered">Actions</th>
       </tr>
-    {{/each}}
-  </tbody>
-</table>
-<form action="/workout/{{workout._id}}/trackworkout" method="POST">
-  <button class="button is-success">
-    Track Workout
-  </button>
-</form>
+    </thead>
+    <tbody>
+      {{#each workout.exercises}}
+        <tr>
+          <td class="has-text-weight-semibold">{{title}}</td>
+          <td>{{equipment}}</td>
+          <td>{{weight}}</td>
+          <td>{{sets}}</td>
+          <td>{{reps}}</td>
+          <td class="has-text-centered">
+            
+            {{!-- {{_id}} refers to the current exercise ID (inside the #each exercises loop).
+
+            {{../workout._id}} uses ../ to move up one level in context
+             access the parent object (the workout),
+             so this is the workout ID. --}}
+             
+            <div class="buttons is-centered">
+              <a href="/workout/{{../workout._id}}/editexercise/{{_id}}" 
+                 class="button is-small is-warning is-light is-rounded">
+                <span class="icon">
+                  <i class="fas fa-edit"></i>
+                </span>
+              </a>
+
+              <a href="/workout/{{../workout._id}}/deleteexercise/{{_id}}" 
+                 class="button is-small is-danger is-light is-rounded">
+                <span class="icon">
+                  <i class="fas fa-trash"></i>
+                </span>
+              </a>
+            </div>
+
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <div class="has-text-centered mt-5">
+    <form action="/workout/{{workout._id}}/trackworkout" method="POST">
+      <button class="button is-success is-rounded is-medium">
+        Track Workout
+      </button>
+    </form>
+  </div>
+</div>

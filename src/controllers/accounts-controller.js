@@ -38,14 +38,23 @@ export const accountsController = {
    * and then redirects to the dashboard if successful, or back to the login page if not.
    */
 
-  // validate checks if the user is authenticated by checking the session.id againat the userstore.
+  /** 
+   * how it works: session.admin is set when the admin logs in, so if that is true, 
+   * we return valid credentials with admin: true. 
+   * user is retrieved from the database using the session id, if no user is found, we return invalid.
+   * */
    async validate(request, session) {
+
+    if (session.admin) {
+    return { isValid: true, credentials: { admin: true } };
+    }
     const user = await db.userStore.getUserById(session.id);
     if (!user) {
       return { isValid: false };
     }
     return { isValid: true, credentials: user };
   },
+  
 
   /**
    * updated login with cookie for session authentication. 
@@ -72,6 +81,35 @@ export const accountsController = {
     },
   },
 
- 
+
+  showAdminLogin: {
+    auth: false,
+    handler: function (request, h) {
+      return h.view("login-admin-view", { title: "Admin Login" });
+    },
+  },
+
+/**
+ * How this works:
+ * The adminLogin handler checks the submitted username and password against the values stored in .env.
+ * If the credentials are valid, it sets a cookie with admin: true to show an admin session and redirects to the admin dashboard.
+ * If the credentials are invalid, it redirects back to the admin login page.
+ */
+ adminLogin: {
+  auth: false,
+  handler(request, h) {
+    const { username, password } = request.payload;
+
+    if (username !== process.env.ADMIN_USERNAME ||
+        password !== process.env.ADMIN_PASSWORD) {
+      return h.redirect("/admin/login");
+    }
+
+    request.cookieAuth.set({ admin: true });
+    return h.redirect("/admin/dashboard");
+  },
+},
+
+
 };
 

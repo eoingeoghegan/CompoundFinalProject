@@ -1,13 +1,11 @@
-<nav class="navbar navbar-compact has-background-black">
+<nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item">
-     {{> compound-logo}} 
-    </a>
+    {{> compound-logo}}
   </div>
-  <div class="navbar-menu" id="navMenu">
+  <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons" style="margin: 0;">
+        <div class="buttons">
           <a id="dashboard" class="button" href="/dashboard"> Dashboard </a>
           <a id="logout" class="button" href="/exercises"> Exercises </a>
           <a id="tracker" class="button" href="/tracker"> Tracker </a>
@@ -17,6 +15,8 @@
     </div>
   </div>
 </nav>
+
+
 <script>
   document.getElementById("{{active}}").classList.add("is-primary");
 </script>

@@ -1,19 +1,19 @@
-{{> welcome-menu active="login"}}
+{{> welcome-menu}}
 
 <section class="section">
   <div class="columns is-centered">
     <div class="column is-5">
       <div class="box">
-        <h1 class="title has-text-centered">Log in</h1>
+        <h1 class="title has-text-centered">Admin Log in</h1>
 
-        <form action="/authenticate" method="POST">
+        <form action="/admin/authenticate" method="POST">
           <div class="field">
-            <label class="label">Email</label>
+            <label class="label">Username</label>
             <input
               class="input"
               type="text"
-              placeholder="Enter email"
-              name="email"
+              placeholder="Enter username"
+              name="username"
             >
           </div>
 
@@ -33,11 +33,8 @@
             </button>
           </div>
         </form>
-        
+
       </div>
-      <div class="has-text-centered">
-          <a class="button has-background-primary has-text-white" href="/admin/login">Admin Login</a>
-        </div>
     </div>
   </div>
 </section>

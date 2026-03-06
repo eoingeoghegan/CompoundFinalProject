@@ -127,11 +127,7 @@ workoutEditView: {
  */
 updateWorkoutTitle: {
   handler: async function (request, h) {
-    await db.workoutStore.updateWorkoutTitle(
-      request.params.id,
-      request.payload.title
-    );
-
+    await db.workoutStore.updateWorkoutTitle(request.params.id, request.payload.title);  
     return h.redirect("/dashboard");
   },
 },

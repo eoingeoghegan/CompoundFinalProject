@@ -69,13 +69,8 @@ updateTrackedExercise: {
       sets: request.payload.sets,
       reps: request.payload.reps
     };
-
-    await db.trackerStore.updateTrackedExercise(
-      request.params.id,
-      request.params.exerciseid,
-      updatedExercise
-    );
-
+   // works by: calling the updateTrackedExercise method in the trackerStore, passing in the tracked workout ID, exercise ID, and the updated exercise data.
+    await db.trackerStore.updateTrackedExercise(request.params.id, request.params.exerciseid, updatedExercise);
     return h.redirect("/tracker");
   }
 },

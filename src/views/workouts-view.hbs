@@ -1,10 +1,12 @@
 {{> menu-navbar }}
 
-<section class="section">
-  <div class="title">
-    {{workout.title}}
+<section class="section has-background-light">
+  <div class="container">
+
+    <h1 class="title is-3">
+      {{workout.title}}
+    </h1>
+    {{> add-exercises}}
+    {{> list-exercises}}
   </div>
-  {{> add-exercises}}
-  {{> list-exercises}}
-  
 </section>
