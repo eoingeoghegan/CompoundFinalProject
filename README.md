@@ -74,16 +74,13 @@ Got admin working how it works..
 ## TODO !!!!!
 -	When updated navbar with exercises  must make views for these and update routes and create controllers. 
 -	Change button icon in list workout partial
--	Edit customs workouts
 -	Add track workout to predefined cards. Need to rework this to let user edit the workouts first as hardcoded. Or leave as is and have starting at lower weights so user can start with this and make their own version??
--	Change to json
--	Change to mongo
--	Joi validation
 -	Maybe add images to custom workout cards by user?? In add workout maybe drop option to select body part?? From predefined images??
--	Tracker tab not highlighted with colour
--	Make tracker view nicer when exercises are added.
--	Fix the date on tracker.
--	Delete/edit tracked workouts when saved.
+-	ADD HAMBURGER FOR PAGE RESIZE
+-	Add delete of users in admin
+-	Expose API
+
+
 
 ## Down the line
 -	Filter saved workouts
