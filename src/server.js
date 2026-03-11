@@ -16,6 +16,8 @@ import { webRoutes } from "./web-routes.js";
 import { db } from "./models/db.js";
 // imported to allow the server to use the authentication.
 import { accountsController } from "./controllers/accounts-controller.js";
+// for validation
+import Joi from "joi";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,8 +30,10 @@ async function init() {
   });
   // to allow the server to use vision and inert, and then to set up the handlebars view engine.
   // cookie intriduced to allow for authentication.
-  await server.register([Vision, Inert]);
+  await server.register(Vision);
+   await server.register(Inert);
   await server.register(Cookie);
+  server.validator(Joi);
   server.views({
     engines: {
       hbs: Handlebars,
@@ -68,26 +72,12 @@ async function init() {
   });
   server.auth.default("session");
 
-
-
-
-  // to allow static images to be rendered
-  server.route({
-  method: "GET",
-  path: "/public/{param*}",
-  // added due to authentication being triggered.
-  options: { auth: false },
-  handler: {
-    directory: {
-      path: path.join(__dirname, "public"),
-      listing: false,
-      index: false,
-    },
-  },
-});
 // allows db to work.
   db.init();
-// to allow the routes defined in web-routes.js to be used in the server.
+// to allow mongo to work
+  db.init("mongo");
+  
+  // to allow the routes defined in web-routes.js to be used in the server.
   server.route(webRoutes);
   await server.start();
   console.log("Server running on %s", server.info.uri);

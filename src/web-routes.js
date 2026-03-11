@@ -47,4 +47,8 @@ export const webRoutes = [
   { method: "POST", path: "/tracker/{id}/editexercise/{exerciseid}", config: trackerController.updateTrackedExercise },
 
   { method: "GET", path: "/admin/dashboard", config: adminController.index },
+
+
+  { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } }
+
 ];

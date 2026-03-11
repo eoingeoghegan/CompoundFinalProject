@@ -13,6 +13,20 @@
       "email": "john@mail.com",
       "password": "a",
       "_id": "ea8119ad-f134-429a-8244-57014cad1f95"
+    },
+    {
+      "firstName": "Paul",
+      "lastName": "Geoghegan",
+      "email": "paul@mail.com",
+      "password": "a",
+      "_id": "e73f14d4-7e0a-4e1e-9294-2ed4daedd441"
+    },
+    {
+      "firstName": "Paul",
+      "lastName": "Geoghegan",
+      "email": "paul@mail.com",
+      "password": "a",
+      "_id": "e5473ed4-4925-420a-9580-5785d4dfd977"
     }
   ],
   "workouts": [

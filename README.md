@@ -53,6 +53,22 @@ Got admin working how it works..
 -	adminController.index checks for admin: true in the cookie.
 -	If check passes,  shows dashboard; else redirects to login.
 
+# Sprint 4  - 09/03/26
+## Session 1- 1 hour
+-	Updated the admin index to display registered users
+-	Updated the view fetching all users and displaying them in a table
+-	Installed joi for validation, created joi scheme for loginValidation for logging in and added to accounts-controller.
+-	Added joi scehemas for sign up, login, workout title on dashboard, and exercises in the workout.
+-	Moved inert to routes from server, moved public folder and edited image paths for app.
+## Session 2 - 2 hours
+-	Create mongo db in the project folder and used mongod --dbpath db to launch it.
+-	Created a connection to Compound, then installed mongoose framework
+-	Created a user model for mongo and then a store for user from this model. Did the same for workout and exercises.
+## Session 3-  1 Hour.
+-	Installed Nodemon to watch the application for updates, restarting is annoying.
+-	Installed Mongoose seeder  for application startup user data.
+-	Created seed-data.js inside mongo folder with startup users data for the app.
+
 
 
 ## TODO !!!!!

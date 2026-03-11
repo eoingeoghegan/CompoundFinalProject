@@ -4,16 +4,17 @@
  * If the user is not authenticated as an admin, they are redirected to the admin login page. 
  * If they are authenticated, they are shown the admin dashboard view.
  */
+import { db } from "../models/db.js";
+
 export const adminController = {
   index: {
     handler: async function (request, h) {
-      if (!request.auth.credentials || !request.auth.credentials.admin) {
-        return h.redirect("/admin/login");
-      }
-
+      const users = await db.userStore.getAllUsers();
       const viewData = {
         title: "Admin Dashboard",
+        users, 
       };
+
       return h.view("admin-dashboard-view", viewData);
     },
   },

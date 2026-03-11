@@ -1,5 +1,6 @@
 import { db } from "../models/db.js";
 
+import { ExercisesValidation } from "../models/joi-schemas.js";
 
 /**
  *  Workout controller has two functions, index and addExercise.
@@ -26,6 +27,13 @@ export const workoutController = {
    * the exercise to the workout.
    */
   addExercise: {
+    validate: {
+      payload: ExercisesValidation,
+      options: { abortEarly: false },
+      failAction: function (request, h, error) {
+        return h.view("workouts-view", { title: "Add Exercise error", errors: error.details }).takeover().code(400);
+      },
+    },
     handler: async function (request, h) {
       const workout = await db.workoutStore.getWorkoutById(request.params.id);
       const newExercise = {

@@ -9,13 +9,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server.js",
-    "lint": "./node_modules/.bin/eslint . --ext .js"
+    "lint": "./node_modules/.bin/eslint . --ext .js",
+    "dev": "npx nodemon  src/server.js"
   },
   "devDependencies": {
     "eslint": "^4.1.1",
     "eslint-config-airbnb-base": "^11.3.2",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.32.0",
+    "nodemon": "^3.1.14",
     "prettier": "^3.8.1"
   },
   "dependencies": {
@@ -25,7 +27,10 @@
     "@hapi/vision": "^7.0.3",
     "dotenv": "^17.3.1",
     "handlebars": "^4.7.8",
+    "joi": "^18.0.2",
     "lowdb": "^7.0.1",
+    "mais-mongoose-seeder": "^1.0.7",
+    "mongoose": "^9.2.4",
     "uuid": "^13.0.0"
   }
 }
