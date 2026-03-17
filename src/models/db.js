@@ -16,6 +16,7 @@ import { connectMongo } from "./mongo/connect.js";
 import { userMongoStore } from "./mongo/user-mongo-store.js";
 import { WorkoutMongoStore } from "./mongo/workout-mongo-store.js";
 import { ExerciseMongoStore } from "./mongo/exercises-mongo-store.js";
+import { trackerMongoStore } from "./mongo/tracker-mongo-store.js";
 
 
 
@@ -38,6 +39,7 @@ export const db = {
       this.userStore = userMongoStore;
       this.workoutStore = WorkoutMongoStore;
       this.exerciseStore = ExerciseMongoStore;
+      this.trackerStore = trackerMongoStore;
       connectMongo();
       break;
     default:

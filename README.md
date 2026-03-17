@@ -70,6 +70,18 @@ Got admin working how it works..
 -	Created seed-data.js inside mongo folder with startup users data for the app.
 
 
+# # Session 4 – 1.5 hours.
+- 	Worked on exposing the api, created api for users, workouts and exercises which use API-routes to GET or POST by http requests on Postman. The data from the MongoDB is accessed and returned in the browser.
+# Sprint- 5- 16/03/2026
+## Session 1, - 2 hours
+-	Updated the JSON and mongo update functions, not on Mongo for tracked workouts
+-	Added hapi swagger to app in in server, now can see end points on localhost:3000/documentation. Exposed the routes but not 100% working yet. Need to update JOI schemas
+-	Connected to mongo cloud Atlas added connection string to .env 
+## Session 2 
+-	Added some comments uploaded to github , Uploaded to glitch, 
+
+
+
 
 ## TODO !!!!!
 -	When updated navbar with exercises  must make views for these and update routes and create controllers. 
@@ -78,7 +90,9 @@ Got admin working how it works..
 -	Maybe add images to custom workout cards by user?? In add workout maybe drop option to select body part?? From predefined images??
 -	ADD HAMBURGER FOR PAGE RESIZE
 -	Add delete of users in admin
--	Expose API
+-	Fix endpoints
+-	Fix mongo update tracker not updating.
+
 
 
 
@@ -92,6 +106,8 @@ Got admin working how it works..
 -	1) The dashboard has predefined cards for upper, lower, full body and core. The user can create customs workouts also. All the workouts store the description, equipment used, weight, reps, and set in a table. this is fine for viewing workouts. In my tracker tab I’m having difficulty thinking of how it will work, and how it will be different from the dashboard
 -	1) Solution - Rethinking of logic to application- Dashboard displays predefined workouts and user can make custom ones. The user should be able to click into a workout(predefined or custom) to view the workout and be able to edit and update the weight, reps and sets. There should be a button then to allow user to start the workout which copies the information in the table. The tracker tab should then display the workout that was done with the information for that session and a timestamp. So if a new workout is edited and started it will record and display this on tab tracker. 
 	
+- 2) Trying to get mongoDB updating tracked workout to work.
+- 2) soloution:
 
 ## References 
 The Compound images for the application was generated using ChatGPT (OpenAI) image generation tools.

@@ -2,6 +2,8 @@ import { v4 } from "uuid";
 import { db } from "./store-utils.js";
 import { exerciseJsonStore } from "./exercise-json-store.js";
 
+
+
 export const workoutJsonStore = {
   async getAllWorkouts() {
     await db.read();
@@ -16,6 +18,12 @@ export const workoutJsonStore = {
     return workout;
   },
 
+  /**
+   * Works by: Reading the database and searching for a workout by its ID
+   * Then gets all exercises realted to the workout.
+   * These exercises are added to the workout object, and the completed
+   * workout (with its exercises) is then returned.
+   */
   async getWorkoutById(id) {
     await db.read();
     const list = db.data.workouts.find((workout) => workout._id === id);
@@ -39,4 +47,18 @@ export const workoutJsonStore = {
     db.data.workouts = [];
     await db.write();
   },
+
+/**
+ * Works by: reading the database, finds the workout by ID, if found allows the
+ * title to be updated with new data.
+ */
+  async updateWorkoutTitle(id, updatedTitle) {
+  await db.read();
+  const workout = db.data.workouts.find((w) => w._id === id);
+
+  if (workout) {
+    workout.title = updatedTitle;
+    await db.write();
+  }
+},
 };

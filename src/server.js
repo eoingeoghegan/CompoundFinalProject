@@ -18,6 +18,17 @@ import { db } from "./models/db.js";
 import { accountsController } from "./controllers/accounts-controller.js";
 // for validation
 import Joi from "joi";
+//for api routes to expose routes
+import { apiRoutes } from "./api-routes.js";
+
+import HapiSwagger from "hapi-swagger";
+
+const swaggerOptions = {
+  info: {
+    title: "Compound API",
+    version: "0.1",
+  },
+};
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,8 +41,14 @@ async function init() {
   });
   // to allow the server to use vision and inert, and then to set up the handlebars view engine.
   // cookie intriduced to allow for authentication.
-  await server.register(Vision);
-   await server.register(Inert);
+  await server.register([
+    Inert,
+    Vision,
+    {
+      plugin: HapiSwagger,
+      options: swaggerOptions,
+    },
+  ]);
   await server.register(Cookie);
   server.validator(Joi);
   server.views({
@@ -74,11 +91,17 @@ async function init() {
 
 // allows db to work.
   db.init();
-// to allow mongo to work
+
+//to switch to JSON store.
+ // db.init("json");  
+
+  // to allow mongo to work
   db.init("mongo");
   
   // to allow the routes defined in web-routes.js to be used in the server.
   server.route(webRoutes);
+  // to allow api routes to be used
+  server.route(apiRoutes);
   await server.start();
   console.log("Server running on %s", server.info.uri);
 }

@@ -42,8 +42,8 @@
     },
     {
       "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
-      "title": "test 2",
-      "_id": "ba8bfb64-f737-4d43-acb6-39c3403d306a"
+      "_id": "ba8bfb64-f737-4d43-acb6-39c3403d306a",
+      "title": "tester"
     },
     {
       "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
@@ -99,20 +99,20 @@
       "workoutid": "ba8bfb64-f737-4d43-acb6-39c3403d306a"
     },
     {
-      "title": "",
-      "equipment": "",
-      "weight": 0,
-      "sets": 0,
-      "reps": 0,
+      "title": "hello",
+      "equipment": "hello",
+      "weight": "0",
+      "sets": "0",
+      "reps": "0",
       "_id": "4a89faa4-f6b6-4afc-89f3-0df4a9fe49b8",
       "workoutid": "ba8bfb64-f737-4d43-acb6-39c3403d306a"
     },
     {
       "title": "r",
-      "equipment": "r",
-      "weight": 5,
-      "sets": 5,
-      "reps": 5,
+      "equipment": "rt",
+      "weight": "5",
+      "sets": "5",
+      "reps": "5",
       "_id": "a6088d35-230e-4c11-b8d4-9f27b0ecd6f3",
       "workoutid": "ba8bfb64-f737-4d43-acb6-39c3403d306a"
     }
@@ -127,11 +127,11 @@
       "exercises": [
         {
           "_id": "18106d29-42ff-4010-8dff-f0c270c181aa",
-          "title": "q",
+          "title": "qs",
           "equipment": "q",
-          "weight": 1,
-          "sets": 1,
-          "reps": 1
+          "weight": "13",
+          "sets": "1",
+          "reps": "1"
         }
       ]
     },
@@ -153,22 +153,38 @@
       ]
     },
     {
-      "_id": "52241889-9436-4601-a9eb-7e079ccaa688",
+      "_id": "6e0d522e-709e-4052-9191-321aa6967890",
       "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
-      "workoutid": "ba8bfb64-f737-4d43-acb6-39c3403d306a",
-      "workoutTitle": "test 2",
-      "timestamp": "2026-03-04T10:52:46.876Z",
+      "workoutid": "fe19da55-a7fe-4cc1-ba29-42c6a72c8a5c",
+      "workoutTitle": "test 1",
+      "timestamp": "2026-03-13T18:43:46.681Z",
       "exercises": [
         {
-          "_id": "cad0a2da-462d-4002-bc6e-77f83cc35d76",
-          "title": "",
+          "_id": "b6bfd2ad-1dfd-4683-8510-9827982f5ed4",
+          "title": "q",
+          "equipment": "q",
+          "weight": 1,
+          "sets": 1,
+          "reps": 1
+        }
+      ]
+    },
+    {
+      "_id": "c294d299-a00f-4fbb-a0e7-2dfe6010791b",
+      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
+      "workoutid": "ba8bfb64-f737-4d43-acb6-39c3403d306a",
+      "timestamp": "2026-03-16T14:26:27.281Z",
+      "exercises": [
+        {
+          "_id": "0c96fe63-b444-476b-8dbc-6e903b271cf2",
+          "title": "d",
           "equipment": "r",
-          "weight": 8,
-          "sets": 8,
-          "reps": 8
+          "weight": "8",
+          "sets": "8",
+          "reps": "8"
         },
         {
-          "_id": "d75e9c12-f5a1-4f87-a96a-878d1c2147af",
+          "_id": "3e5c6b2b-2376-43b7-8db9-d9e0d84c5466",
           "title": "w",
           "equipment": "w",
           "weight": 9,
@@ -176,15 +192,15 @@
           "reps": 9
         },
         {
-          "_id": "212604ad-b857-4f64-8b17-ade2e016f3f5",
-          "title": "",
-          "equipment": "",
-          "weight": 0,
-          "sets": 0,
-          "reps": 0
+          "_id": "811640c0-d029-4408-a3cf-3bc0bc2731ce",
+          "title": "hello",
+          "equipment": "hello",
+          "weight": "0",
+          "sets": "0",
+          "reps": "0"
         },
         {
-          "_id": "e48982a2-45cd-47ac-8926-351926dc6a92",
+          "_id": "c1cb4455-2d23-4204-ae42-e40b87f84c90",
           "title": "r",
           "equipment": "r",
           "weight": 5,

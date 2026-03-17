@@ -3,6 +3,7 @@
 import Mongoose from "mongoose";
 import { Workout } from "./workout-mongo.js";
 import { ExerciseMongoStore } from "./exercises-mongo-store.js";
+import { TrackedWorkout } from "./tracker-mongo.js";
 
 export const WorkoutMongoStore = {
   async getAllWorkouts() {
@@ -42,5 +43,14 @@ export const WorkoutMongoStore = {
 
   async deleteAllWorkouts() {
     await Workout.deleteMany({});
+  },
+
+  async updateWorkoutTitle(id, updatedTitle) {
+  const workoutDoc = await Workout.findOne({ _id: id });
+
+  if (workoutDoc) {
+    workoutDoc.title = updatedTitle;
+    await workoutDoc.save();
   }
+},
 };
