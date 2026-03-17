@@ -92,6 +92,7 @@ Got admin working how it works..
 -	Add delete of users in admin
 -	Fix endpoints
 -	Fix mongo update tracker not updating.
+- update joi shcemas foe endpoints.
 
 
 
