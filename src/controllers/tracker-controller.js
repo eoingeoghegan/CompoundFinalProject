@@ -38,11 +38,12 @@ export const trackerController = {
  * The editTrackedExerciseView handler receives a request with tracked workout and exercise ID parameters.
  * It gets the tracked workout and finds the specific exercise within it.
  * It then renders the "edit-tracked-workout-view" with the workout and exercise data.
+ * Converted the exercise thString() for mongo as it would hav given an ObjectId
  */
 editTrackedWorkoutView: {
   handler: async function(request, h) {
     const workout = await db.trackerStore.getTrackedWorkoutById(request.params.id);
-    const exercise = workout.exercises.find(e => e._id === request.params.exerciseid);
+    const exercise = workout.exercises.find(e => e._id.toString() === request.params.exerciseid);
 
     return h.view("edit-tracked-workout-view", {
       title: "Edit Tracked Exercise",

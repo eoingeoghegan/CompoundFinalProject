@@ -5,6 +5,11 @@ import { ExerciseMongoStore } from "./exercises-mongo-store.js";
 
 export const trackerMongoStore = {
 
+  async getAllTrackedWorkouts() {
+      const trackedWorkouts = await TrackedWorkout.find().lean();
+      return trackedWorkouts;
+    },
+
   /**
  * works by: retreving exercises by the workoutID ,
  * generating a new UUID for the tracked workout,
@@ -76,57 +81,28 @@ export const trackerMongoStore = {
     await TrackedWorkout.deleteMany({});
   },
 
-  /**
-   * NOT WORKING, NEED TO FIX. 
-   
+   /**
+    * Works by:
+    * It gets a tracked workoutID, an exerciseID,and an updated exercise 
+    * object with the new exercise details.
+    * It gets the tracked workout from the database using the workout ID.
+    * It then gets the exercise inside the workout's exercises array using the exercise ID.
+    * The exercise's (title, equipment, weight, sets, and reps) are updated with the new values.
+    * The tracked workout document is then saved to the database and the updated tracked workout is returned.
+   */
   async updateTrackedExercise(workoutId, exerciseId, updatedExercise) {
-  const trackedWorkout = await TrackedWorkout.findOne({ _id: workoutId });
-  if (!trackedWorkout) return;
 
+  const trackedWorkout = await TrackedWorkout.findById(workoutId);
   const exercise = trackedWorkout.exercises.id(exerciseId);
 
-  if (exercise) {
-    exercise.title = updatedExercise.title;
-    exercise.equipment = updatedExercise.equipment;
-    exercise.weight = updatedExercise.weight;
-    exercise.sets = updatedExercise.sets;
-    exercise.reps = updatedExercise.reps;
-
-    await trackedWorkout.save();
-  }
-},
-};
-*/ 
-/*
-async updateTrackedExerciseMongo(workoutId, exerciseId, updatedExercise) {
-  // Find the tracked workout by its ID
-  const trackedWorkout = await TrackedWorkout.findOne({ _id: workoutId });
-  if (!trackedWorkout) {
-    console.log("Workout not found");
-    return;
-  }
-
-  // Find the exercise inside the workout using .find() ??
-  const exercise = trackedWorkout.exercises.find(
-    e => e._id.toString() === exerciseId.toString()
-  );
-
-  if (!exercise) {
-    console.log("Exercise not found in workout");
-    return;
-  }
-
-  // Update 
   exercise.title = updatedExercise.title;
   exercise.equipment = updatedExercise.equipment;
   exercise.weight = updatedExercise.weight;
   exercise.sets = updatedExercise.sets;
   exercise.reps = updatedExercise.reps;
 
-  // ave the tracked workout
   await trackedWorkout.save();
-  console.log("Mongo exercise updated successfully");
+
+  return trackedWorkout;
 }
-};
-*/
 };

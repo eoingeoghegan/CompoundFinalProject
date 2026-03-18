@@ -54,11 +54,6 @@
       "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
       "title": "test 4",
       "_id": "17e7fcd2-b330-4154-aca5-1bd9deb3fff5"
-    },
-    {
-      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
-      "title": "test 5",
-      "_id": "998eaae7-082e-4b68-8e00-1fcfe2ee75cc"
     }
   ],
   "exercises": [
@@ -128,7 +123,7 @@
         {
           "_id": "18106d29-42ff-4010-8dff-f0c270c181aa",
           "title": "qs",
-          "equipment": "q",
+          "equipment": "qww",
           "weight": "13",
           "sets": "1",
           "reps": "1"

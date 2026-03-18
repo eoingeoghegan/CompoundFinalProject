@@ -33,6 +33,7 @@ const swaggerOptions = {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+
 // to initialize the server, set up the view engine, and start the server.
 async function init() {
   const server = Hapi.server({
@@ -93,7 +94,7 @@ async function init() {
   db.init();
 
 //to switch to JSON store.
- // db.init("json");  
+  //db.init("json");  
 
   // to allow mongo to work
   db.init("mongo");

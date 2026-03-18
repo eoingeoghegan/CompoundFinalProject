@@ -2,6 +2,8 @@ import { userApi } from "./api/user-api.js";
 import { workoutApi } from "./api/workout-api.js";
 import { exerciseApi } from "./api/exercise-api.js";
 
+import { trackedWorkoutApi } from "./api/tracker-api.js";
+
 
 // routes to get information from the db from endpoints
 export const apiRoutes = [
@@ -25,5 +27,11 @@ export const apiRoutes = [
   { method: "GET", path: "/api/exercises", config: exerciseApi.find },
   { method: "GET", path: "/api/exercises/{id}", config: exerciseApi.findOne },
   { method: "DELETE", path: "/api/exercises/{id}", config: exerciseApi.deleteOne },
+
+  { method: "POST", path: "/api/trackedworkouts", config: trackedWorkoutApi.create },
+  { method: "GET", path: "/api/trackedworkouts", config: trackedWorkoutApi.find },
+  { method: "GET", path: "/api/trackedworkouts/{id}", config: trackedWorkoutApi.findOne },
+  { method: "DELETE", path: "/api/trackedworkouts/{id}", config: trackedWorkoutApi.deleteOne },
+  { method: "DELETE", path: "/api/trackedworkouts", config: trackedWorkoutApi.deleteAll },
 
 ];

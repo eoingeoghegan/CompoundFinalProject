@@ -1,6 +1,12 @@
 // imports the database - mongoDB 
 import { db } from "../models/db.js";
 
+/**
+ * UserArray, IdSpec, JoiValidation from joi-schemas 
+ */
+import { UserArray, IdSpec, JoiValidation } from "../models/joi-schemas.js";
+
+import { validationError } from "./logger.js";
 
 /**
  * How it works: in api-routes it is POST to this route, On Postman for example
@@ -28,6 +34,9 @@ export const userApi = {
         }
     },
     tags: ["api"],
+    validate: { payload: JoiValidation, failAction: validationError },
+    response: { schema: JoiValidation, failAction: validationError },
+    
   },
 
 /**  
@@ -44,6 +53,8 @@ export const userApi = {
       tags: ["api"],
       description: "Get all userApi",
       notes: "Returns details of all userApi",
+      response: { schema: UserArray, failAction: validationError },
+      
     },
 
 
@@ -55,6 +66,8 @@ export const userApi = {
         return user;
       },
       tags: ["api"],
+      validate: { params: { id: IdSpec }, failAction: validationError },
+      response: { schema: JoiValidation, failAction: validationError },
     },
 
     

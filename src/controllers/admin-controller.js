@@ -14,7 +14,7 @@ export const adminController = {
         title: "Admin Dashboard",
         users, 
       };
-
+      
       return h.view("admin-dashboard-view", viewData);
     },
   },

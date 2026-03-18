@@ -120,17 +120,18 @@ export const accountsController = {
  adminLogin: {
   auth: false,
   handler(request, h) {
-    const { username, password } = request.payload;
+  const { username, password } = request.payload;
+  console.log("Login attempt:", username, password);
 
-    if (username !== process.env.ADMIN_USERNAME ||
-        password !== process.env.ADMIN_PASSWORD) {
-      return h.redirect("/admin/login");
-    }
+  if (username !== process.env.ADMIN_USERNAME || password !== process.env.ADMIN_PASSWORD) {
+    console.log("Login failed");
+    return h.redirect("/admin/login");
+  }
 
-    request.cookieAuth.set({ admin: true });
-    return h.redirect("/admin/dashboard");
-  },
-},
-
+  console.log("Login success");
+  request.cookieAuth.set({ admin: true });
+  return h.redirect("/admin/dashboard");
+}
+ },
 
 };

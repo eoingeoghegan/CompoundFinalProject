@@ -110,6 +110,9 @@ Got admin working how it works..
 - 2) Trying to get mongoDB updating tracked workout to work.
 - 2) soloution:
 
+- 3) glitch website unavailable
+- 3) solution
+
 ## References 
 The Compound images for the application was generated using ChatGPT (OpenAI) image generation tools.
 All brand assets are original and AI-generated for this project.

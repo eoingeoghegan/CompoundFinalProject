@@ -2,6 +2,10 @@
 
 import { db } from "../models/db.js";
 
+import { ExerciseArray, IdSpec, ExercisesValidation } from "../models/joi-schemas.js";
+
+import { validationError } from "./logger.js";
+
 export const exerciseApi = {
   find: {
     auth: false,
@@ -11,6 +15,9 @@ export const exerciseApi = {
         return exercises;
     },
      tags: ["api"],
+    description: "Get all exercises",
+    notes: "Returns all exercises",
+    response: { schema: ExerciseArray, failAction: validationError },
   },
 
   findOne: {
@@ -20,8 +27,10 @@ export const exerciseApi = {
         return exercise;
     },
     tags: ["api"],
-    description: "Get all ExercisesApi",
-    notes: "Returns all exercises",
+    description: "Get an exercise",
+    notes: "Returns an exercise",
+    validate: { params: { id: IdSpec }, failAction: validationError },
+    response: { schema: ExercisesValidation, failAction: validationError },
   },
 
   create: {
@@ -33,6 +42,10 @@ export const exerciseApi = {
           return h.response(exercise).code(201);
     },
     tags: ["api"],
+    description: "Create a exercise",
+    notes: "Returns the new exercise",
+    validate: { payload: ExercisesValidation, failAction: validationError },
+    response: { schema: ExercisesValidation, failAction: validationError },
   },
 
   deleteAll: {
@@ -43,6 +56,7 @@ export const exerciseApi = {
         return h.response().code(204);
     },
     tags: ["api"],
+    description: "Delete all exercises",
   },
 
   deleteOne: {
@@ -54,5 +68,6 @@ export const exerciseApi = {
         return h.response().code(204);
     },
     tags: ["api"],
+    description: "Delete a excercise",
   },
 };
