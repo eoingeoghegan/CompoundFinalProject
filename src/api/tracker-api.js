@@ -1,5 +1,7 @@
 import { db } from "../models/db.js";
 
+import { validationError } from "./logger.js";
+
 export const trackedWorkoutApi = {
   // Get all tracked workouts
   find: {
@@ -23,6 +25,7 @@ export const trackedWorkoutApi = {
     tags: ["api"],
     description: "Get a tracked workout",
     notes: "Returns a tracked workout with exercises",
+    validate: { params: { id: IdSpec }, failAction: validationError },
   },
 
   // Create a tracked workout (copying exercises from a workout)
@@ -63,5 +66,6 @@ export const trackedWorkoutApi = {
     },
     tags: ["api"],
     description: "Delete a tracked workout",
+    validate: { params: { id: IdSpec }, failAction: validationError },
   },
 };

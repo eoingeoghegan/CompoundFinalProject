@@ -77,8 +77,24 @@ Got admin working how it works..
 -	Updated the JSON and mongo update functions, not on Mongo for tracked workouts
 -	Added hapi swagger to app in in server, now can see end points on localhost:3000/documentation. Exposed the routes but not 100% working yet. Need to update JOI schemas
 -	Connected to mongo cloud Atlas added connection string to .env 
-## Session 2 
--	Added some comments uploaded to github , Uploaded to glitch, 
+##  Session 2-  2 hours
+•	Added some comments , worked on joi schemas validation for user-api endpoints the same for the rest of the apis
+
+## Session3
+
+-	Fixed the update issue with tracker-mongoStore, had to change the code in tracker controller to convert the exercise id  from Objectid to a string in the update method. Tracker updates the workout on tracker tab now.
+-	Updated the JoiSchemas for API need to complete
+-	Work on endpoints testing for working. 
+-	Delete exercise by ID, no field to enter id, fixed (session 4)
+-	Post API tracked workout, nothing to enter
+-	Get tracked workout by ID, no field to enter
+-	Post workout, has data to enter but fails to execute
+## Session 4
+-	Continued with endpoints and JOI Schemas before uploading to render.
+-	Endpoints not 100% but up on render now.
+-	Release on github
+-	Start on FrontEnd.
+ 
 
 
 
@@ -91,8 +107,9 @@ Got admin working how it works..
 -	ADD HAMBURGER FOR PAGE RESIZE
 -	Add delete of users in admin
 -	Fix endpoints
--	Fix mongo update tracker not updating.
-- update joi shcemas foe endpoints.
+-	Add delete of users in admin
+-	Fix endpoints and do tracked workouts JOI SCHEMAS
+
 
 
 
@@ -112,6 +129,8 @@ Got admin working how it works..
 
 - 3) glitch website unavailable
 - 3) solution
+- 4) Getting enpoints to work properly
+- 4) 
 
 ## References 
 The Compound images for the application was generated using ChatGPT (OpenAI) image generation tools.
