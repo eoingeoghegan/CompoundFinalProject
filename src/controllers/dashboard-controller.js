@@ -1,5 +1,5 @@
 import { db } from "../models/db.js";
-import { WorkoutTitleValidation } from "../models/joi-schemas.js";
+import { WorkoutTitleSpec } from "../models/joi-schemas.js";
 /**
  * The index now request the users credentials from the session. Then it gets the workouts for that user
  * so it wont be global. Viewdata is updated to include the user and workouts.
@@ -24,7 +24,7 @@ export const dashboardController = {
 */
   addWorkout: {
     validate: {
-      payload: WorkoutTitleValidation,
+      payload: WorkoutTitleSpec,
       options: { abortEarly: false },
       failAction: function (request, h, error) {
         return h.view("dashboard-view", { title: "Add Workout error", errors: error.details }).takeover().code(400);

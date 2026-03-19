@@ -88,23 +88,24 @@ export const trackerJsonStore = {
    * sets, and reps) are updated with the values from updatedExercise. 
    * 
    */ 
-  async updateTrackedExercise(trackedWorkoutId, exerciseId, updatedExercise) {
-  await db.read();
+  async updateTrackedExercise(workoutId, exerciseId, updatedExercise) {
+  const trackedWorkout = await trackedWorkout.findOne({ _id: workoutId });
+  if (!trackedWorkout) return;
 
-  const trackedWorkout = db.data.trackedWorkouts.find((tw) => tw._id === trackedWorkoutId);
+  // Use find() instead of exercises.id()
+  const exercise = trackedWorkout.exercises.find(e => e._id.toString() === exerciseId.toString());
 
-  if (trackedWorkout) {
-    const exercise = trackedWorkout.exercises.find((e) => e._id === exerciseId);
+  if (exercise) {
+    exercise.title = updatedExercise.title;
+    exercise.equipment = updatedExercise.equipment;
+    exercise.weight = updatedExercise.weight;
+    exercise.sets = updatedExercise.sets;
+    exercise.reps = updatedExercise.reps;
 
-    if (exercise) {
-      exercise.title = updatedExercise.title;
-      exercise.equipment = updatedExercise.equipment;
-      exercise.weight = updatedExercise.weight;
-      exercise.sets = updatedExercise.sets;
-      exercise.reps = updatedExercise.reps;
-
-      await db.write();
-    }
+    await trackedWorkout.save();
+    console.log("Exercise updated successfully");
+  } else {
+    console.log("Exercise not found in workout");
   }
 },
   

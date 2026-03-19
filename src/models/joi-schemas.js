@@ -1,76 +1,68 @@
 import Joi from "joi";
 
 
-/**
- * Joi Schemas for validating data structures in the application.
- * 
- * IdSpec: Allows either a string or an object to be a valid ID. 
- *    
- * JoiValidation: schema for a User object. 
- *    - makes sure firstName, lastName, email, and password are required strings.
- *    - Used for API responses and form validation the user data.
- * 
- * UserArray: Validates the users- JoiValidation.
- *   
- * 
- * loginValidation: Validates login form payloads.
- *    - Requires email to be a valid email string and password to be a string.
- * 
- * ExercisesValidation: Validates exercise data.
- *    - title and equipment are required strings.
- *    - weight, sets, and reps are optional numbers that can also be empty strings.
- * 
- * WorkoutTitleValidation: Validates a workout title object.
- *    - makes sure the title property is a required string.
- * 
- * 
- */
-
 export const IdSpec = Joi.alternatives().try(Joi.string(), Joi.object()).description("a valid ID");
-/**
- * Schemas for validating the forms in the application.
- * 
- * updated JoiValidation for Users for exposing the endpoint 
- */
 
-export const JoiValidation = Joi.object()
+
+export const UserCredentials = Joi.object()
+  .keys({
+    email: Joi.string().email().example("eoin@mail.com").required(),
+    password: Joi.string().example("a").required(),
+  })
+  .label("UserCredentials");
+
+// UserValidation is Extension of UserCredentials for adding a user without id in swagger
+export const UserValidation = UserCredentials
  .keys({
    firstName: Joi.string().example("Eoin").required(),
    lastName: Joi.string().example("Geoghegan").required(),
-   email: Joi.string().email().example("eoin@mail.com").required(),
-   password: Joi.string().example("a").required(), 
-   _id: IdSpec,
-    __v: Joi.number(),
 })
 .label("UserDetails");
 
-export const UserArray = Joi.array().items(JoiValidation).label("UserArray");
+// UserFullValidation is extension of UserValidation
+export const UserFullValidation = UserValidation.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("UserDetailsFull");
 
-
-export const loginValidation = {
-  email: Joi.string().email().required(),
-  password: Joi.string().required(),
-};
-
-
-export const ExercisesValidation = Joi.object() 
-.keys({
-  title: Joi.string().example("Bench Press").required(),
-  equipment: Joi.string().example("Barbell").required(),
-  weight: Joi.number().allow("").optional().example(20),
-  sets: Joi.number().allow("").optional().example(5),
-  reps: Joi.number().allow("").optional().example(12),
-})
-.label("ExerciseJoi");
-
-export const ExerciseArray = Joi.array().items(ExercisesValidation).label("ExerciseArray");
+export const UserArray = Joi.array().items(UserFullValidation).label("UserArray");
 
 
 
-export const WorkoutTitleValidation = Joi.object()
-.keys({
-  title: Joi.string().example("Back Workout").required(),
-})
-.label("WorkoutJoi");
-export const WorkoutArray = Joi.array().items(WorkoutTitleValidation).label("WorkoutArray");
 
+export const ExerciseSpec = Joi.object()
+  .keys({
+    title: Joi.string().required().example("Bench Press"),
+    equipment: Joi.string().required().example("Barbell"),
+    weight: Joi.number().allow("").optional().example(40),
+    sets: Joi.number().allow("").optional().example(4),
+    reps: Joi.number().allow("").optional().example(12),
+    workoutid: IdSpec,
+  })
+  .label("Exercise");
+
+export const ExerciseSpecPlus = ExerciseSpec.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("ExercisePlus");
+
+export const ExerciseArray = Joi.array().items(ExerciseSpecPlus).label("ExerciseArray");
+
+
+
+
+
+
+export const WorkoutTitleSpec = Joi.object()
+  .keys({
+    title: Joi.string().required().example("Back Workout"),
+    userid: IdSpec,  
+  })
+  .label("Workout Title");
+
+export const WorkoutTitleSpecPlus = WorkoutTitleSpec.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("WorkoutPlus");
+
+export const WorkoutArray = Joi.array().items(WorkoutTitleSpecPlus).label("WorkoutArray");

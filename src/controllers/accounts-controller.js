@@ -3,7 +3,7 @@
 import { db } from "../models/db.js";
 
 // import the Joi validation schemas for validating the signup and login forms.
-import { JoiValidation, loginValidation } from "../models/joi-schemas.js";
+import { UserValidation, UserCredentials } from "../models/joi-schemas.js";
 
 //auth false added to allow access to the login and signup pages without being authenticated.
 export const accountsController = {
@@ -28,7 +28,7 @@ export const accountsController = {
   signup: {
     auth: false,
     validate: {
-      payload: JoiValidation,
+      payload: UserValidation,
        options: { abortEarly: false },
       failAction: function (request, h, error) {
         return h.view("signup-view", { title: "Sign up error", errors: error.details }).takeover().code(400);
@@ -78,7 +78,7 @@ export const accountsController = {
   login: {
     auth: false,
     validate: {
-      payload: loginValidation,
+      payload: UserCredentials,
        options: { abortEarly: false },
       failAction: function (request, h, error) {
         return h.view("login-view", { title: "Login error", errors: error.details }).takeover().code(400);

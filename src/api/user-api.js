@@ -4,7 +4,8 @@ import { db } from "../models/db.js";
 /**
  * UserArray, IdSpec, JoiValidation from joi-schemas 
  */
-import { UserArray, IdSpec, JoiValidation } from "../models/joi-schemas.js";
+
+import { UserArray, IdSpec, UserValidation, UserFullValidation } from "../models/joi-schemas.js";
 
 import { validationError } from "./logger.js";
 
@@ -33,9 +34,11 @@ export const userApi = {
           return h.response(user).code(201);
         }
     },
+
+    // will validate payload by name 
     tags: ["api"],
-    validate: { payload: JoiValidation, failAction: validationError },
-    response: { schema: JoiValidation, failAction: validationError },
+    validate: { payload: UserValidation, failAction: validationError },
+    response: { schema: UserFullValidation, failAction: validationError },
     
   },
 
@@ -67,7 +70,7 @@ export const userApi = {
       },
       tags: ["api"],
       validate: { params: { id: IdSpec }, failAction: validationError },
-      response: { schema: JoiValidation, failAction: validationError },
+      response: { schema: UserFullValidation, failAction: validationError },
     },
 
     

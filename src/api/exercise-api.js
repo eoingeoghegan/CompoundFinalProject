@@ -2,7 +2,7 @@
 
 import { db } from "../models/db.js";
 
-import { ExerciseArray, IdSpec, ExercisesValidation } from "../models/joi-schemas.js";
+import { ExerciseArray, IdSpec, ExerciseSpecPlus, ExerciseSpec } from "../models/joi-schemas.js";
 
 import { validationError } from "./logger.js";
 
@@ -30,7 +30,7 @@ export const exerciseApi = {
     description: "Get an exercise",
     notes: "Returns an exercise",
     validate: { params: { id: IdSpec }, failAction: validationError },
-    response: { schema: ExercisesValidation, failAction: validationError },
+    response: { schema: ExerciseSpecPlus, failAction: validationError },
   },
 
   create: {
@@ -44,8 +44,8 @@ export const exerciseApi = {
     tags: ["api"],
     description: "Create a exercise",
     notes: "Returns the new exercise",
-    validate: { payload: ExercisesValidation, failAction: validationError },
-    response: { schema: ExercisesValidation, failAction: validationError },
+    validate: { payload: ExerciseSpec , failAction: validationError },
+    response: { schema: ExerciseSpecPlus , failAction: validationError },
   },
 
   deleteAll: {
@@ -68,6 +68,7 @@ export const exerciseApi = {
         return h.response().code(204);
     },
     tags: ["api"],
-    description: "Delete a excercise",
+    description: "Delete a excercise by ID",
+    validate: { params: { id: IdSpec }, failAction: validationError },
   },
 };

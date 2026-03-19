@@ -1,5 +1,6 @@
 import { db } from "../models/db.js";
-import { WorkoutArray, IdSpec, WorkoutTitleValidation } from "../models/joi-schemas.js";
+import { WorkoutArray, IdSpec, WorkoutTitleSpec, WorkoutTitleSpecPlus  } from "../models/joi-schemas.js";
+
 
 import { validationError } from "./logger.js";
 
@@ -28,7 +29,7 @@ export const workoutApi = {
     description: "Find a Workout",
     notes: "Returns a workout",
     validate: { params: { id: IdSpec }, failAction: validationError },
-    response: { schema: WorkoutTitleValidation, failAction: validationError },
+    response: { schema: WorkoutTitleSpecPlus, failAction: validationError },
   },
 
   create: {
@@ -36,16 +37,16 @@ export const workoutApi = {
     handler: async function (request, h) {
       
         const workout = request.payload;
-        const newWorkout = await db.workoutStore.addWorkout(workout);
+        const newWorkout= await db.workoutStore.addWorkout(workout);
         if (newWorkout) {
           return h.response(newWorkout).code(201);
         }
-      },
+    },
     tags: ["api"],
-    description: "Create a workout",
-    notes: "Returns the newly created workout",
-    validate: { payload: WorkoutTitleValidation, failAction: validationError },
-    response: { schema: WorkoutTitleValidation, failAction: validationError },
+    description: "Create a new Workout",
+    notes: "Shows new Workout",
+    validate: { payload: WorkoutTitleSpec, failAction: validationError },
+    response: { schema: WorkoutTitleSpecPlus, failAction: validationError },
   },
 
   deleteOne: {
@@ -58,13 +59,14 @@ export const workoutApi = {
     },
     tags: ["api"],
     description: "Delete a workout",
+    
   },
 
   deleteAll: {
     auth: false,
     handler: async function (request, h) {
       
-        await db.vStore.deleteAllWorkouts();
+        await db.workoutStore.deleteAllWorkouts();
         return h.response().code(204);
     },
     tags: ["api"],
