@@ -1,5 +1,7 @@
 import { db } from "../models/db.js";
 
+import {IdSpec } from "../models/joi-schemas.js";
+
 import { validationError } from "./logger.js";
 
 export const trackedWorkoutApi = {
