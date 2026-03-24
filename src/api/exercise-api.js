@@ -44,7 +44,7 @@ export const exerciseApi = {
     tags: ["api"],
     description: "Create a exercise",
     notes: "Returns the new exercise",
-    validate: { payload: ExerciseSpec , failAction: validationError },
+    validate: { payload: ExerciseSpec },
     response: { schema: ExerciseSpecPlus , failAction: validationError },
   },
 
