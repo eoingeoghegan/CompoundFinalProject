@@ -1,138 +1,30 @@
-Progress of the project
+# Compound
 
-- https://compoundfinalproject.onrender.com  
+This application allows a user to sign up and login to the application. Custom Workouts can be recorded, edited and delted. Within a workout exercises can be logged, edited, deleted and tracked. A tracked workout saves on the tracker tab with a timestamp and the workout title. The tracked workouts can be edited and deleted.
 
+# URL
 
-# Backend Technology 
-## Sprint 2 - 23/02/2026
-## Session 1 - 3 hours
--	Updated list workout partial to include button with workout id
--	Created new view for adding exercises to a custom workout card. Created list and add exercise partials for this along with new controller, memory store for exercises and updated the routes + db. 
--	Updated workout memory store to retrieve exercises that are add to workout.
--	Now the user can create a custom workout card, enter the card and add workout information to it. 
--	Created a predefinedCards partial for dashboard view, used AI for generated images for predefined cards. Made cards a link to workouts.
--	Created views, controller for  predefined cards along with route to view these cards.
-## Session 2 – 3 hours
--	Hardcoded workouts for predefined cards. Created a table for these.
--	Changed how dash displays information. 
--	Work on updating and deleting workouts and editing/deleting exercises, created button to delete workout/id for workout and workout/{{../workout._id}}/deleteexercise/{{_id}} for exercise in a workout, updated route added delete workout and exercises to controllers. 
--	Sessions work - Installed hapi/cookie, updated cookie session strategy in server  to trigger for all routes. Added validate function and updated login function to set cookie if the user logs in successfully. Turned auth to false in accounts to allow access to the pages in browser. To fix the global information updated the dashboard controller + added getUserWorkouts function in workout store to allow logged in user to view their own data.
--	Installed dot.env to protect sensitive application information
-	
+- Back end URL: https://compoundfinalproject.onrender.com       render.com
+- Front end URL: https://compound-front-20036009.netlify.app/   netflify.com
 
-## App Progress
-- Now user can delete workouts,exercises. The application has authentication/validation using cookies + session. The application renders loggedInUsers information so it’s not global.  Application tested without .env and it failed to load so all working.
+- Front End  repo: https://github.com/eoingeoghegan/CompoundFinalProject-Svelte 
 
-## Session 3 - 2 hours
-First let user edit workout information.
--	Added view for Tracker tab + created controller, store and updated routes.
--	Add a form to where the user adds exercises to the workout. This is a button which copies the users added exercises. When copied it save this and displays It on the tracker tab showing the title of the workout, the date and the workout completed. 
-## Session3 progress
-The user can create a workout, when inside the workout there is a track workout button now. When pressed it copies whatever exercises that are added and saves this to the tracker tab. It record the time and date the workout is completed and shows the workout title. This has a controller for tracker and uses the workout controller. It has a trackers store in memory and the routes are completed to allow info to be displayed. Need to be fine tuned but working as planned.
+# easy login/seed data: 
 
-## Sprint 3 02/03/26
-## session 1 1 hour
+- username:eoin@mail.com
+- pass: a
 
--	Created edit-workout-view and edit-exercise-view to show fields to update the title of workout and the exercises within the workout. 
+# Technology 
 
--	Added edit button in list exercises and list workouts which route to the edit and update methods in the controller. Added these methods to allow inputed data to be edited and saved and display in browser.
-
--	Created edit tracker workout view, which is a form to update tracked workouts. Added a delete button to list tracked workouts and an edit button which open the edit tracked workout form. Added a method to tracker store for updating the trackedworkout by workoutid and exerciseID. And added two methods to tracker controller to edit tracked workout view and to update exercises that are tracked.
-
--	Session progress. Now the user can add a workout, add exercises to workout and track the workout. The user can view the workout on the tracker tab. The workout can be edited/deleted, the exercises can be edited/deleted and the tracked workouts can be edited/deleted.
-
-## Session 2 1 hour
-
--	Installed npm install lowdb for JSON db.
--	Created json store for user, exercise, workout and tracker. Updated db to use the new stores which now saves the  data in json db. All working as expected.
--	Updated the application to make it look nicer visually.
-## Session 3 -  2 hours
-Got admin working how it works.. 
--	Admin visits /admin/login.
--	Enters username/password (from .env).
--	If correct,  session cookie { admin: true } is created.
--	Admin accesses /admin/dashboard.
--	adminController.index checks for admin: true in the cookie.
--	If check passes,  shows dashboard; else redirects to login.
-
-# Sprint 4  - 09/03/26
-## Session 1- 1 hour
--	Updated the admin index to display registered users
--	Updated the view fetching all users and displaying them in a table
--	Installed joi for validation, created joi scheme for loginValidation for logging in and added to accounts-controller.
--	Added joi scehemas for sign up, login, workout title on dashboard, and exercises in the workout.
--	Moved inert to routes from server, moved public folder and edited image paths for app.
-## Session 2 - 2 hours
--	Create mongo db in the project folder and used mongod --dbpath db to launch it.
--	Created a connection to Compound, then installed mongoose framework
--	Created a user model for mongo and then a store for user from this model. Did the same for workout and exercises.
-## Session 3-  1 Hour.
--	Installed Nodemon to watch the application for updates, restarting is annoying.
--	Installed Mongoose seeder  for application startup user data.
--	Created seed-data.js inside mongo folder with startup users data for the app.
+- Language: Javascript
+- Frontend Framework: Svelte
+- Runtime: Node.js
+- Backend Framework: Hapi
+- Database: Mongodb (Atlas)
+- Database Tool: Mongoose
+- Templating Engine: Handlebars.
 
 
-# # Session 4 – 1.5 hours.
-- 	Worked on exposing the api, created api for users, workouts and exercises which use API-routes to GET or POST by http requests on Postman. The data from the MongoDB is accessed and returned in the browser.
-# Sprint- 5- 16/03/2026
-## Session 1, - 2 hours
--	Updated the JSON and mongo update functions, not on Mongo for tracked workouts
--	Added hapi swagger to app in in server, now can see end points on localhost:3000/documentation. Exposed the routes but not 100% working yet. Need to update JOI schemas
--	Connected to mongo cloud Atlas added connection string to .env 
-##  Session 2-  2 hours
-•	Added some comments , worked on joi schemas validation for user-api endpoints the same for the rest of the apis
-
-## Session3
-
--	Fixed the update issue with tracker-mongoStore, had to change the code in tracker controller to convert the exercise id  from Objectid to a string in the update method. Tracker updates the workout on tracker tab now.
--	Updated the JoiSchemas for API need to complete
--	Work on endpoints testing for working. 
--	Delete exercise by ID, no field to enter id, fixed (session 4)
--	Post API tracked workout, nothing to enter
--	Get tracked workout by ID, no field to enter
--	Post workout, has data to enter but fails to execute
-## Session 4
--	Continued with endpoints and JOI Schemas before uploading to render.
--	Endpoints not 100% but up on render now.
--	Release on github
--	Start on FrontEnd.
- 
-
-
-
-
-## TODO !!!!!
--	When updated navbar with exercises  must make views for these and update routes and create controllers. 
--	Change button icon in list workout partial
--	Add track workout to predefined cards. Need to rework this to let user edit the workouts first as hardcoded. Or leave as is and have starting at lower weights so user can start with this and make their own version??
--	Maybe add images to custom workout cards by user?? In add workout maybe drop option to select body part?? From predefined images??
--	ADD HAMBURGER FOR PAGE RESIZE
--	Add delete of users in admin
--	Fix endpoints
--	Add delete of users in admin
--	Fix endpoints and do tracked workouts JOI SCHEMAS
-
-
-
-
-
-## Down the line
--	Filter saved workouts
--	Group workouts body type
-
-## FUNCTIONALITY!!
--	Tracker tab to store an entry of the exercise completed.. works selecting tracker tab, seeing an option for select workout- allowing user picking a predefined card or custom workout from dashboard and having the option to complete one which saves with timestamp
-## Challenges
--	1) The dashboard has predefined cards for upper, lower, full body and core. The user can create customs workouts also. All the workouts store the description, equipment used, weight, reps, and set in a table. this is fine for viewing workouts. In my tracker tab I’m having difficulty thinking of how it will work, and how it will be different from the dashboard
--	1) Solution - Rethinking of logic to application- Dashboard displays predefined workouts and user can make custom ones. The user should be able to click into a workout(predefined or custom) to view the workout and be able to edit and update the weight, reps and sets. There should be a button then to allow user to start the workout which copies the information in the table. The tracker tab should then display the workout that was done with the information for that session and a timestamp. So if a new workout is edited and started it will record and display this on tab tracker. 
-	
-- 2) Trying to get mongoDB updating tracked workout to work.
-- 2) soloution:
-
-- 3) glitch website unavailable
-- 3) solution
-- 4) Getting enpoints to work properly
-- 4) 
 
 ## References 
 The Compound images for the application was generated using ChatGPT (OpenAI) image generation tools.
