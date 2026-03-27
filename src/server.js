@@ -37,8 +37,13 @@ const __dirname = path.dirname(__filename);
 // to initialize the server, set up the view engine, and start the server.
 async function init() {
   const server = Hapi.server({
-    port: 3000,
-    host: "localhost",
+    port: process.env.PORT || 3000,
+    host: "0.0.0.0",
+    routes: {
+    cors: {
+      origin: ["*"], // allow all origins
+    },
+  },
   });
   // to allow the server to use vision and inert, and then to set up the handlebars view engine.
   // cookie intriduced to allow for authentication.
@@ -89,9 +94,6 @@ async function init() {
     validate: accountsController.validate,
   });
   server.auth.default("session");
-
-// allows db to work.
-  db.init();
 
 //to switch to JSON store.
   //db.init("json");  

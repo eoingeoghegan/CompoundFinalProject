@@ -13,6 +13,8 @@ export const apiRoutes = [
   { method: "GET", path: "/api/users", config: userApi.find },
   { method: "DELETE", path: "/api/users", config: userApi.deleteAll },
   { method: "GET", path: "/api/users/{id}", config: userApi.findOne },
+// sending data from frontend to backend
+  { method: "POST", path: "/api/users/authenticate", config: userApi.authenticate },
 
   //Workouts 
   { method: "POST", path: "/api/workouts", config: workoutApi.create },

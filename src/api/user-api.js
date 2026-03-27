@@ -82,4 +82,28 @@ export const userApi = {
       } ,
       tags: ["api"],
   },
+
+
+  /**
+   * Added to authenticate frontend data being sent to login into service.
+   * Works by: Gets the user from the database using the email
+   * If no user return "User not found"
+   * If password is wrong return "Wrong password"
+   * If correct return the user object
+   */
+  authenticate: {
+  auth: false,
+  handler: async function (request, h) {
+
+    const user = await db.userStore.getUserByEmail(request.payload.email);
+
+    if (!user) {
+      return h.response("User not found").code(401);
+    }
+    if (user.password !== request.payload.password) {
+      return h.response("Wrong password").code(401);
+    }
+    return user;
+  },
+},
 };
