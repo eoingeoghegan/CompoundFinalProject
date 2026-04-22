@@ -37,8 +37,8 @@ const __dirname = path.dirname(__filename);
 // to initialize the server, set up the view engine, and start the server.
 async function init() {
   const server = Hapi.server({
-    port: process.env.PORT || 3000,
-    host: "0.0.0.0",
+  // port: process.env.PORT || 3000,
+   // host: "0.0.0.0",
     routes: {
     cors: {
       origin: ["*"], // allow all origins

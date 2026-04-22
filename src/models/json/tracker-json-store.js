@@ -13,31 +13,52 @@ import { exerciseJsonStore } from "./exercise-json-store.js";
  */
 export const trackerJsonStore = {
 
-  async addTrackedWorkout(userId, workout) {
-    await db.read();
-    const exercises = await exerciseJsonStore.getExercisesByWorkoutId(workout._id);
+ /**
+ * How it works:
+ *Edited this to allow predefined workouts to be saved too.
+ *
+ * Now it reads the DB, checks if the workout has an ID. If it does then it gets the exercise with the id.
+ * If not it gets the exercises from the predefeined workout object that is passed in.
+ * 
+ * Whatever workout is found gets added to the trackedWorkout array with the userId, workoutID, WorkoutTtitel,
+ * timestamp and exercises saved to the tracker tab.
+ 
+ */
 
-    const trackedWorkout = {
+
+async addTrackedWorkout(userId, workout) {
+  await db.read();
+
+  let exercises = [];
+
+  if (workout._id) {
+    exercises = await exerciseJsonStore.getExercisesByWorkoutId(workout._id);
+  } else {
+    exercises = workout.exercises;
+  }
+
+  const trackedWorkout = {
+    _id: v4(),
+    userid: userId,
+    workoutid: workout._id,
+    workoutTitle: workout.title,
+    timestamp: new Date(),
+    exercises: exercises.map(e => ({
       _id: v4(),
-      userid: userId,
-      workoutid: workout._id,
-      workoutTitle: workout.title,
-      timestamp: new Date(),
-      exercises: exercises.map(e => ({
-        _id: v4(),
-        title: e.title,
-        equipment: e.equipment,
-        weight: e.weight || 0,
-        sets: e.sets || 0,
-        reps: e.reps || 0
-      }))
-    };
+      title: e.title,
+      equipment: e.equipment,
+      weight: Number(e.weight) || 0,
+      sets: Number(e.sets) || 0,
+      reps: Number(e.reps) || 0
+    }))
+  };
 
-    db.data.trackedWorkouts.push(trackedWorkout);
-    await db.write();
+  db.data.trackedWorkouts.push(trackedWorkout);
+  await db.write();
 
-    return trackedWorkout;
-  },
+  return trackedWorkout;
+},
+
 
   /**
    *Works by:  Reads the database, filters tracked workouts by userId,
@@ -88,25 +109,30 @@ export const trackerJsonStore = {
    * sets, and reps) are updated with the values from updatedExercise. 
    * 
    */ 
-  async updateTrackedExercise(workoutId, exerciseId, updatedExercise) {
-  const trackedWorkout = await trackedWorkout.findOne({ _id: workoutId });
+ async updateTrackedExercise(workoutId, exerciseId, updatedExercise) {
+  await db.read();
+
+  const trackedWorkout = db.data.trackedWorkouts.find(
+    (trackedworkout) => trackedworkout._id === workoutId
+  );
+
   if (!trackedWorkout) return;
 
-  // Use find() instead of exercises.id()
-  const exercise = trackedWorkout.exercises.find(e => e._id.toString() === exerciseId.toString());
+  const exercise = trackedWorkout.exercises.find(
+    (exer) => exer._id === exerciseId
+  );
 
-  if (exercise) {
-    exercise.title = updatedExercise.title;
-    exercise.equipment = updatedExercise.equipment;
-    exercise.weight = updatedExercise.weight;
-    exercise.sets = updatedExercise.sets;
-    exercise.reps = updatedExercise.reps;
+  if (!exercise) return;
 
-    await trackedWorkout.save();
-    console.log("Exercise updated successfully");
-  } else {
-    console.log("Exercise not found in workout");
-  }
+  exercise.title = updatedExercise.title;
+  exercise.equipment = updatedExercise.equipment;
+  exercise.weight = Number(updatedExercise.weight) || 0;
+  exercise.sets = Number(updatedExercise.sets) || 0;
+  exercise.reps = Number(updatedExercise.reps) || 0;
+
+  await db.write();
 },
   
+
+
 };

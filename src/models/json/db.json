@@ -54,6 +54,16 @@
       "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
       "title": "test 4",
       "_id": "17e7fcd2-b330-4154-aca5-1bd9deb3fff5"
+    },
+    {
+      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
+      "title": "2",
+      "_id": "2c04052a-1b4f-4729-a693-922481f4fcf7"
+    },
+    {
+      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
+      "title": "eoin",
+      "_id": "f93cbdfd-1966-45ac-acb9-5a61a20973aa"
     }
   ],
   "exercises": [
@@ -110,26 +120,36 @@
       "reps": "5",
       "_id": "a6088d35-230e-4c11-b8d4-9f27b0ecd6f3",
       "workoutid": "ba8bfb64-f737-4d43-acb6-39c3403d306a"
+    },
+    {
+      "title": "q",
+      "equipment": "q",
+      "weight": 2,
+      "sets": 2,
+      "reps": 2,
+      "_id": "ef45ad88-dcb3-4372-b5e1-8cc2fa04d6e7",
+      "workoutid": "2c04052a-1b4f-4729-a693-922481f4fcf7"
+    },
+    {
+      "title": "qq",
+      "equipment": "qq",
+      "weight": 88,
+      "sets": 88,
+      "reps": 88,
+      "_id": "2c88ec38-7e2c-4bf5-b71c-74d152789b0c",
+      "workoutid": "2c04052a-1b4f-4729-a693-922481f4fcf7"
+    },
+    {
+      "title": "eoin",
+      "equipment": "eoin",
+      "weight": 102,
+      "sets": 33,
+      "reps": 55,
+      "_id": "a8f2555b-9779-4fbc-bfab-2b9f45016cfa",
+      "workoutid": "f93cbdfd-1966-45ac-acb9-5a61a20973aa"
     }
   ],
   "trackedWorkouts": [
-    {
-      "_id": "68fe7e5a-460b-4b8a-9c20-0e0164036034",
-      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
-      "workoutid": "fe19da55-a7fe-4cc1-ba29-42c6a72c8a5c",
-      "workoutTitle": "test 1",
-      "timestamp": "2026-03-03T10:52:37.124Z",
-      "exercises": [
-        {
-          "_id": "18106d29-42ff-4010-8dff-f0c270c181aa",
-          "title": "qs",
-          "equipment": "qww",
-          "weight": "13",
-          "sets": "1",
-          "reps": "1"
-        }
-      ]
-    },
     {
       "_id": "5d58966f-65ec-46b9-9cba-d58fa960ff38",
       "userid": "ea8119ad-f134-429a-8244-57014cad1f95",
@@ -201,6 +221,590 @@
           "weight": 5,
           "sets": 5,
           "reps": 5
+        }
+      ]
+    },
+    {
+      "_id": "26510988-522d-4a90-864c-5f3775f0fae3",
+      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
+      "workoutid": null,
+      "workoutTitle": "Lower Body Workout",
+      "timestamp": "2026-04-20T17:01:03.129Z",
+      "exercises": [
+        {
+          "_id": "6abd194f-5596-4c17-a80e-ec3971222a1c",
+          "title": "Barbell Squat",
+          "equipment": "Barbell",
+          "weight": 80,
+          "sets": 4,
+          "reps": 6
+        },
+        {
+          "_id": "9541aeb9-6c7e-4848-92c3-fe0f48859e35",
+          "title": "Leg Press",
+          "equipment": "Machine",
+          "weight": 120,
+          "sets": 3,
+          "reps": 10
+        },
+        {
+          "_id": "1afdb80d-61da-4676-add7-ee40034750f8",
+          "title": "Romanian Deadlift",
+          "equipment": "Barbell",
+          "weight": 70,
+          "sets": 3,
+          "reps": 8
+        },
+        {
+          "_id": "f34336f3-16fd-4dfc-b198-5803320e7337",
+          "title": "Leg Curl",
+          "equipment": "Machine",
+          "weight": 45,
+          "sets": 3,
+          "reps": 12
+        },
+        {
+          "_id": "3adf3c5d-e518-4dec-b314-89201e675348",
+          "title": "Standing Calf Raises",
+          "equipment": "Machine",
+          "weight": 60,
+          "sets": 4,
+          "reps": 15
+        }
+      ]
+    },
+    {
+      "_id": "b8d58f82-6b80-45b3-bafc-7b25dfb500da",
+      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
+      "workoutid": null,
+      "workoutTitle": "Full Body Workout",
+      "timestamp": "2026-04-20T17:01:13.761Z",
+      "exercises": [
+        {
+          "_id": "3637be53-533a-475a-b1df-81043c7acf8d",
+          "title": "Deadlift",
+          "equipment": "Barbell",
+          "weight": 90,
+          "sets": 4,
+          "reps": 5
+        },
+        {
+          "_id": "49b60255-644f-4b20-a301-ce9aeab133bd",
+          "title": "Bench Press",
+          "equipment": "Barbell",
+          "weight": 60,
+          "sets": 3,
+          "reps": 8
+        },
+        {
+          "_id": "0912cc29-5676-41bd-b9ef-9d8e76f8e73a",
+          "title": "Pull-Ups",
+          "equipment": "Bodyweight",
+          "weight": 0,
+          "sets": 3,
+          "reps": 8
+        },
+        {
+          "_id": "aa120611-12c2-4095-9710-352dc7661277",
+          "title": "Walking Lunges",
+          "equipment": "Dumbbells",
+          "weight": 20,
+          "sets": 3,
+          "reps": 12
+        },
+        {
+          "_id": "d5edbc8d-bf27-4e1d-b26a-96ab7b655f92",
+          "title": "Plank",
+          "equipment": "Bodyweight",
+          "weight": 0,
+          "sets": 3,
+          "reps": 45
+        }
+      ]
+    },
+    {
+      "_id": "348cfdb4-f466-48a6-b74c-c5ba96079948",
+      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
+      "workoutid": null,
+      "workoutTitle": "Upper Body Workout",
+      "timestamp": "2026-04-20T17:03:17.478Z",
+      "exercises": [
+        {
+          "_id": "d5484dbc-280a-4ed3-b5fd-4bdc1114b3a3",
+          "title": "Bench Press",
+          "equipment": "Barbell",
+          "weight": 60,
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "_id": "d9e77487-8061-42d6-9a7d-78f4f7fe0c09",
+          "title": "Shoulder Press",
+          "equipment": "Dumbbells",
+          "weight": 20,
+          "sets": 3,
+          "reps": 10
+        },
+        {
+          "_id": "e5a1befc-b58e-4e17-81b7-5adf02dc5573",
+          "title": "Lat Pulldown",
+          "equipment": "Cable Machine",
+          "weight": 50,
+          "sets": 3,
+          "reps": 12
+        },
+        {
+          "_id": "8b9d5ed7-496a-4914-96e8-6c3a873aa734",
+          "title": "Bicep Curls",
+          "equipment": "Dumbbells",
+          "weight": 12,
+          "sets": 3,
+          "reps": 12
+        },
+        {
+          "_id": "9f25804f-64ce-4198-a8cf-8b942413dc07",
+          "title": "Tricep Pushdown",
+          "equipment": "Cable Machine",
+          "weight": 35,
+          "sets": 3,
+          "reps": 12
+        }
+      ]
+    },
+    {
+      "_id": "0fbce82b-dd9d-47d1-b20b-4bb1ba689e46",
+      "userid": "ea8119ad-f134-429a-8244-57014cad1f95",
+      "workoutid": null,
+      "workoutTitle": "Lower Body Workout",
+      "timestamp": "2026-04-20T17:04:29.416Z",
+      "exercises": [
+        {
+          "_id": "22b406e5-f8c0-4169-ab57-dc65dbbf8c49",
+          "title": "Barbell Squat",
+          "equipment": "Barbell",
+          "weight": 80,
+          "sets": 4,
+          "reps": 6
+        },
+        {
+          "_id": "03280987-399c-4599-817d-501081da513b",
+          "title": "Leg Press",
+          "equipment": "Machine",
+          "weight": 120,
+          "sets": 3,
+          "reps": 10
+        },
+        {
+          "_id": "460bf370-010c-4511-b531-9345eedda029",
+          "title": "Romanian Deadlift",
+          "equipment": "Barbell",
+          "weight": 70,
+          "sets": 3,
+          "reps": 8
+        },
+        {
+          "_id": "f639ed70-df18-47d1-a127-fc402733c779",
+          "title": "Leg Curl",
+          "equipment": "Machine",
+          "weight": 45,
+          "sets": 3,
+          "reps": 12
+        },
+        {
+          "_id": "975e3f24-f156-4a6c-83a5-9ac15c475968",
+          "title": "Standing Calf Raises",
+          "equipment": "Machine",
+          "weight": 60,
+          "sets": 4,
+          "reps": 15
+        }
+      ]
+    },
+    {
+      "_id": "889a8dd0-65d0-42c1-83d5-4dc9c4d8415c",
+      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
+      "workoutid": "2c04052a-1b4f-4729-a693-922481f4fcf7",
+      "workoutTitle": "2",
+      "timestamp": "2026-04-20T18:29:29.784Z",
+      "exercises": [
+        {
+          "_id": "1dbe5cc3-1194-4f67-bf4e-5872a971c395",
+          "title": "q",
+          "equipment": "q",
+          "weight": 2,
+          "sets": 2,
+          "reps": 2
+        }
+      ]
+    },
+    {
+      "_id": "dbcca31d-b7ec-4e7d-a5d6-a2e86484666c",
+      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
+      "workoutTitle": "Upper Body Workout",
+      "timestamp": "2026-04-22T13:47:03.597Z",
+      "exercises": [
+        {
+          "_id": "bbb76e84-3860-4d38-9014-1247978b1e7e",
+          "title": "Bench Press",
+          "equipment": "Barbell",
+          "weight": 1,
+          "sets": 0,
+          "reps": 1
+        },
+        {
+          "_id": "481f653f-e379-42c1-b43c-2ba5d305ade0",
+          "title": "Shoulder Press",
+          "equipment": "Dumbbells",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        },
+        {
+          "_id": "c6553101-08c7-46c6-8a66-3e6c8b075d1f",
+          "title": "Lat Pulldown",
+          "equipment": "Cable Machine",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        },
+        {
+          "_id": "a8b5c6ca-833e-4171-92c5-5390ef0a28a0",
+          "title": "Bicep Curls",
+          "equipment": "Dumbbells",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        },
+        {
+          "_id": "0010de2c-8e7b-4687-86d9-15935af038e7",
+          "title": "Tricep Pushdown",
+          "equipment": "Cable Machine",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        }
+      ]
+    },
+    {
+      "_id": "b32cfc18-f896-4eef-a644-3d6b5151f171",
+      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
+      "workoutTitle": "Upper Body Workout",
+      "timestamp": "2026-04-22T13:59:13.631Z",
+      "exercises": [
+        {
+          "_id": "cb41a245-524d-4f99-bce7-d58bfba96e77",
+          "title": "Bench Press",
+          "equipment": "Barbell",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        },
+        {
+          "_id": "d70cf3e6-463c-40ef-9fa1-2aa66cdf7f47",
+          "title": "Shoulder Press",
+          "equipment": "Dumbbells",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        },
+        {
+          "_id": "a926d85f-ec80-4539-a7e0-e00c8f37fd7c",
+          "title": "Lat Pulldown",
+          "equipment": "Cable Machine",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        },
+        {
+          "_id": "24af2b7a-af6e-4d05-90c9-cbe1361317f6",
+          "title": "Bicep Curls",
+          "equipment": "Dumbbells",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        },
+        {
+          "_id": "9d45d500-b160-472f-90cc-7e237c369a4d",
+          "title": "Tricep Pushdown",
+          "equipment": "Cable Machine",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        }
+      ]
+    },
+    {
+      "_id": "5c8008d0-0955-4d08-b1d6-fdd63a69cc9e",
+      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
+      "workoutTitle": "Lower Body Workout",
+      "timestamp": "2026-04-22T14:01:54.520Z",
+      "exercises": [
+        {
+          "_id": "1a0bd624-e9ed-4569-b9f1-c18bc5d62005",
+          "title": "Barbell Squat",
+          "equipment": "Barbell",
+          "weight": 12,
+          "sets": 14,
+          "reps": 55
+        },
+        {
+          "_id": "6fd24cd0-c39d-4793-b581-16764fa7a821",
+          "title": "Leg Press",
+          "equipment": "Machine",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        },
+        {
+          "_id": "8838cd9e-c89c-4432-83e5-bed57d26a518",
+          "title": "Romanian Deadlift",
+          "equipment": "Barbell",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        },
+        {
+          "_id": "cb3484dd-c8c6-4a58-978c-f828b41d65b3",
+          "title": "Leg Curl",
+          "equipment": "Machine",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        },
+        {
+          "_id": "40c08a68-715b-4d03-b0b6-aca39cb8815d",
+          "title": "Standing Calf Raises",
+          "equipment": "Machine",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        }
+      ]
+    },
+    {
+      "_id": "66005883-e28a-47a8-9078-602a7e7ebf8f",
+      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
+      "workoutTitle": "Core Workout",
+      "timestamp": "2026-04-22T14:25:25.317Z",
+      "exercises": [
+        {
+          "_id": "48f621cb-b649-4c4a-b5c6-72f2e18ff4c5",
+          "title": "Hanging Leg Raises",
+          "equipment": "Pull-Up Bar",
+          "weight": 777,
+          "sets": 777,
+          "reps": 777
+        },
+        {
+          "_id": "aa512480-78f3-49e4-92fa-e1636700916a",
+          "title": "Cable Crunch",
+          "equipment": "Cable Machine",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        },
+        {
+          "_id": "587fbcd0-e028-4136-894e-fde348285c52",
+          "title": "Russian Twists",
+          "equipment": "Medicine Ball",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        },
+        {
+          "_id": "fb57b8ff-7fe0-453c-a432-f06a1297101f",
+          "title": "Back Extensions",
+          "equipment": "Roman Chair",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        },
+        {
+          "_id": "01a02d92-d907-419e-847e-e782d9b5ecdc",
+          "title": "Side Plank",
+          "equipment": "Bodyweight",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        }
+      ]
+    },
+    {
+      "_id": "402277be-677b-4a83-ad87-99162a93042e",
+      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
+      "workoutid": "ba8bfb64-f737-4d43-acb6-39c3403d306a",
+      "workoutTitle": "tester",
+      "timestamp": "2026-04-22T14:25:38.714Z",
+      "exercises": [
+        {
+          "_id": "39f20848-85b6-4e24-b7c3-cd57509a42a9",
+          "title": "",
+          "equipment": "r",
+          "weight": 8,
+          "sets": 8,
+          "reps": 8
+        },
+        {
+          "_id": "d0bdddf4-44da-476e-ae31-971647f3e00d",
+          "title": "w",
+          "equipment": "w",
+          "weight": 9,
+          "sets": 9,
+          "reps": 9
+        },
+        {
+          "_id": "de83ee29-6ab0-40a0-ab3c-3b9f4586f05b",
+          "title": "hello",
+          "equipment": "hello",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        },
+        {
+          "_id": "1f27718a-b522-4f44-9b80-36ddb7c2ed18",
+          "title": "r",
+          "equipment": "rt",
+          "weight": 5,
+          "sets": 5,
+          "reps": 5
+        }
+      ]
+    },
+    {
+      "_id": "0e4548eb-3a11-4fb6-b983-77e018ef020c",
+      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
+      "workoutTitle": "Core Workout",
+      "timestamp": "2026-04-22T14:40:42.089Z",
+      "exercises": [
+        {
+          "_id": "ea57d9d6-7296-4a91-a9ef-d6b366096618",
+          "title": "Hanging Leg Raises",
+          "equipment": "Pull-Up Bar",
+          "weight": 12,
+          "sets": 0,
+          "reps": 99
+        },
+        {
+          "_id": "98d5cd54-45b0-4d0f-b677-e17f31585ccb",
+          "title": "Cable Crunch",
+          "equipment": "Cable Machine",
+          "weight": 0,
+          "sets": 45,
+          "reps": 0
+        },
+        {
+          "_id": "5d993964-b7e2-4b1f-9d17-8ad55ea97f6c",
+          "title": "Russian Twists",
+          "equipment": "Medicine Ball",
+          "weight": 0,
+          "sets": 0,
+          "reps": 65
+        },
+        {
+          "_id": "78a1c227-7037-4648-b069-bc038d482275",
+          "title": "Back Extensions",
+          "equipment": "Roman Chair",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        },
+        {
+          "_id": "9b43ae68-98ca-4903-ab4f-4fbd35be02ea",
+          "title": "Side Plank",
+          "equipment": "Bodyweight",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        }
+      ]
+    },
+    {
+      "_id": "119c37e2-54ac-46d7-91e2-cdcffaf6032f",
+      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
+      "workoutid": "2c04052a-1b4f-4729-a693-922481f4fcf7",
+      "workoutTitle": "2",
+      "timestamp": "2026-04-22T14:41:15.830Z",
+      "exercises": [
+        {
+          "_id": "94d55f4c-cb15-4dbd-8ff8-fc9413442202",
+          "title": "q",
+          "equipment": "q",
+          "weight": 2,
+          "sets": 2,
+          "reps": 2
+        },
+        {
+          "_id": "711302df-a3ac-4103-b8ce-ca3c02abac7c",
+          "title": "qq",
+          "equipment": "qq",
+          "weight": 88,
+          "sets": 88,
+          "reps": 88
+        }
+      ]
+    },
+    {
+      "_id": "e24c7780-be2b-4c7e-9ec8-3727cdd70400",
+      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
+      "workoutid": "f93cbdfd-1966-45ac-acb9-5a61a20973aa",
+      "workoutTitle": "eoin",
+      "timestamp": "2026-04-22T14:52:44.972Z",
+      "exercises": [
+        {
+          "_id": "939ea06a-3e55-4f71-ba4e-2fa80a149f55",
+          "title": "eoin",
+          "equipment": "eoin",
+          "weight": 10,
+          "sets": 33,
+          "reps": 55
+        }
+      ]
+    },
+    {
+      "_id": "a0d9bfc9-05c1-4ae8-9d67-bd4215ab5855",
+      "userid": "a53a3a29-c114-4b45-946d-ce3891c98b62",
+      "workoutTitle": "Core Workout",
+      "timestamp": "2026-04-22T14:53:44.611Z",
+      "exercises": [
+        {
+          "_id": "1252d808-c46a-4a0e-83fc-efc67d8d227e",
+          "title": "Hanging Leg Raises",
+          "equipment": "Pull-Up Bar",
+          "weight": 34,
+          "sets": 2,
+          "reps": 12
+        },
+        {
+          "_id": "be1daaf0-a6d6-4341-be85-bf68a0b96caa",
+          "title": "Cable Cruncher",
+          "equipment": "Cable Machine",
+          "weight": 0,
+          "sets": 4,
+          "reps": 0
+        },
+        {
+          "_id": "275d4c5d-a5f8-46d7-9ed6-dc8b838abdd7",
+          "title": "Russian Twists",
+          "equipment": "Medicine Ball",
+          "weight": 0,
+          "sets": 4,
+          "reps": 0
+        },
+        {
+          "_id": "5631f7e0-fc82-4cd7-895e-d58bfc4030d3",
+          "title": "Back Extensions",
+          "equipment": "Roman Chair",
+          "weight": 0,
+          "sets": 0,
+          "reps": 0
+        },
+        {
+          "_id": "904f1217-e699-4762-97f8-379a85dcbfea",
+          "title": "Side Plank",
+          "equipment": "Bodyweight",
+          "weight": 22,
+          "sets": 0,
+          "reps": 55
         }
       ]
     }

@@ -104,5 +104,40 @@ export const trackerMongoStore = {
   await trackedWorkout.save();
 
   return trackedWorkout;
+},
+
+/**
+ * 
+ *Similar to method in JSON store.
+ */
+
+async addTrackedWorkout(userId, workout) {
+
+  let exercises = [];
+
+  if (workout._id) {
+    exercises = await ExerciseMongoStore.getExercisesByWorkoutId(workout._id);
+  } else {
+    exercises = workout.exercises;
+  }
+
+  const trackedWorkout = {
+    userid: userId,
+    workoutid: workout._id || null,
+    workoutTitle: workout.title,
+    timestamp: new Date(),
+    exercises: exercises.map(e => ({
+      title: e.title,
+      equipment: e.equipment,
+      weight: Number(e.weight) || 0,
+      sets: Number(e.sets) || 0,
+      reps: Number(e.reps) || 0
+    }))
+  };
+
+  const newTrackedWorkout = new TrackedWorkout(trackedWorkout);
+  const trackedWorkoutObj = await newTrackedWorkout.save();
+
+  return trackedWorkoutObj;
 }
 };

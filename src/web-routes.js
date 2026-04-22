@@ -33,11 +33,17 @@ export const webRoutes = [
   { method: "GET", path: "/workout/{id}/editexercise/{exerciseid}", config: workoutController.editExerciseView },
   { method: "POST", path: "/workout/{id}/editexercise/{exerciseid}", config: workoutController.updateExercise },
 
+//PREDEFINED
+ // { method: "GET", path: "/predefined/upper", config: predefinedCardController.upper },
+ // { method: "GET", path: "/predefined/lower", config: predefinedCardController.lower },
+  //{ method: "GET", path: "/predefined/full", config: predefinedCardController.full },
+ // { method: "GET", path: "/predefined/core", config: predefinedCardController.core },
 
-  { method: "GET", path: "/predefined/upper", config: predefinedCardController.upper },
-  { method: "GET", path: "/predefined/lower", config: predefinedCardController.lower },
-  { method: "GET", path: "/predefined/full", config: predefinedCardController.full },
-  { method: "GET", path: "/predefined/core", config: predefinedCardController.core },
+ // new routes for predefenied cards. type now dynamically changes depending on what card is picked. Deleted the hardcoded views, and updated the controller.
+ { method: "GET", path: "/predefined/{type}", config: predefinedCardController.index },
+ { method: "POST", path: "/predefined/{type}/trackworkout", config: predefinedCardController.trackWorkout },
+
+
   
 
   { method: "GET", path: "/tracker", config: trackerController.index },

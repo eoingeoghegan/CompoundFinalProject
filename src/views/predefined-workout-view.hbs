@@ -1,0 +1,61 @@
+{{!-- table for the predefined cards, it used to show hardcoded data, it still does for equipmemnt and exercise 
+but now the weight, sets, and reps can be entered manually and it saves this in tracker tab. Can be edited in tracker--}}
+
+{{> menu-navbar }}
+
+<section class="section box">
+  <h1 class="title is-3">{{workout.title}}</h1>
+
+  <form action="/predefined/{{workout.name}}/trackworkout" method="POST"> {{!-- workout.name is from the predefined-workout.js. the key is the type of workout(full body, upper, lower or core.--}}
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>Exercise</th>
+          <th>Equipment</th>
+          <th>Weight (KG)</th>
+          <th>Sets</th>
+          <th>Reps</th>
+          
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each workout.exercises}}
+          <tr>
+            <td>
+              {{title}}
+              <input type="hidden" name="title" value="{{title}}">
+            </td>
+            <td>
+              {{equipment}}
+              <input type="hidden" name="equipment" value="{{equipment}}">
+            </td>
+            <td>
+              <div class="field">
+                <input class="input" type="text" placeholder="Enter weight" name="weight">
+              </div>
+            </td>
+            <td>
+              <div class="field">
+                <input class="input" type="text" placeholder="Enter sets" name="sets">
+              </div>
+            </td>
+            <td>
+              <div class="field">
+                <input class="input" type="text" placeholder="Enter reps" name="reps">
+              </div>
+            </td>
+            <td>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <div class="has-text-centered mt-5">
+      <button class="button is-success is-rounded is-medium" type="submit">
+        Track Workout
+      </button>
+    </div>
+  </form>
+</section>
