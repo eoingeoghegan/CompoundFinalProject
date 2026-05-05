@@ -4,7 +4,7 @@ This application allows a user to sign up and login to the application. Custom W
 
 # URL
 
-- Back end URL: https://compoundfinalproject.onrender.com       render.com
+- Back end URL: https://compoundfinalproject.onrender.com       render.com (main/updated version of application)
 - Front end URL: https://compound-front-20036009.netlify.app/   netflify.com
 
 - Front End  repo: https://github.com/eoingeoghegan/CompoundFinalProject-Svelte 
